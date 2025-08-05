@@ -725,7 +725,7 @@ ggplot(data = subset(data2, Species == "BA"),
   stat_summary(fun = mean, aes(group = Treatment), geom = "crossbar", width = 0.75, # Match the boxplot width
                color = "black", size = 1) +
   geom_jitter(width = 0.2, size = 10, alpha = 0.7) + # Raw points
-  ylab("Leaf % Nitrogen") +
+  ylab("Leaf Tissue Nitrogen (%)") +
   xlab("Treatment Strain") +
   annotate("text", x = 1, y = 3.15, label = "a", size = 30) +
   annotate("text", x = 2, y = 4.05, label = "b", size = 30) +
@@ -748,7 +748,7 @@ ggplot(data = subset(data2, Species == "CN "),
   stat_summary(fun = mean, aes(group = Treatment), geom = "crossbar", width = 0.75, # Match the boxplot width
                color = "black", size = 1) +
   geom_jitter(width = 0.2, size = 10, alpha = 0.7) + # Raw points
-  ylab("Leaf % Nitrogen") +
+  ylab("Leaf Tissue Nitrogen (%)") +
   xlab("Treatment Strain") +
   annotate("text", x = 1, y = 2.90, label = "a", size = 30) +
   annotate("text", x = 2, y = 4.75, label = "c", size = 30) +
@@ -771,7 +771,7 @@ ggplot(data = subset(data2, Species == "LH"),
   stat_summary(fun = mean, aes(group = Treatment), geom = "crossbar", width = 0.75, # Match the boxplot width
                color = "black", size = 1) +
   geom_jitter(width = 0.2, size = 10, alpha = 0.7) + # Raw points
-  ylab("Leaf % Nitrogen") +
+  ylab("Leaf Tissue Nitrogen (%)") +
   xlab("Treatment Strain") + ylim(0,3) +
   annotate("text", x = 1, y = 2.75, label = "a", size = 30) +
   annotate("text", x = 2, y = 2.75, label = "b", size = 30) +
