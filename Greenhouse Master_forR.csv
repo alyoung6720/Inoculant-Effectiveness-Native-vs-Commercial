@@ -1,0 +1,1026 @@
+Individual,Species,Treatment,Tray,NoduleNumber,TotalNoduleWt,DateHarvested,Notes,Soils,ARAs
+9,BA,Control,1,0,0,6/19/2024,,soils collected,
+10,BA,Control,1,0,0,6/19/2024,,,
+11,BA,Control,1,DEAD,DEAD,6/19/2024,no ANPP (pic),,
+12,BA,Control,1,0,0,6/19/2024,,soils collected,ARA
+21,BA,Control,2,0,0,6/19/2024,,,
+22,BA,Control,2,0,0,6/19/2024,,soils collected,
+23,BA,Control,2,0,0,6/19/2024,,,
+24,BA,Control,2,0,0,6/19/2024,,,
+33,BA,Control,2,DEAD,DEAD,6/20/2024,no ANPP (pic),,
+34,BA,Control,2,1,0.0363,6/20/2024,Calling it 1 nodule but it's super complex.,soils collected,ARA
+35,BA,Control,2,0,0,6/20/2024,,,
+36,BA,Control,2,0,0,6/20/2024,,,
+45,BA,Control,3,0,0,6/20/2024,,,
+46,BA,Control,3,5,0.019,6/20/2024,,soils collected,ARA
+47,BA,Control,3,0,0,6/20/2024,,soils collected,
+48,BA,Control,3,0,0,6/20/2024,,,
+57,BA,Control,3,0,0,6/20/2024,,,
+58,BA,Control,3,0,0,6/20/2024,,soils collected,
+59,BA,Control,3,0,0,6/20/2024,,soils collected,
+60,BA,Control,3,0,0,6/20/2024,,,
+69,BA,Control,4,0,0,6/22/2024,,,
+70,BA,Control,4,0,0,6/22/2024,,soils collected,
+71,BA,Control,4,0,0,6/22/2024,,,
+72,BA,Control,4,0,0,6/22/2024,,soils collected,
+85,BA,Control,5,0,0,6/23/2024,,soils collected,
+86,BA,Control,5,0,0,6/23/2024,,,
+87,BA,Control,5,0,0,6/23/2024,,soils collected,
+88,BA,Control,5,0,0,6/23/2024,,,
+97,BA,Control,5,0,0,6/23/2024,,,
+98,BA,Control,5,0,0,6/23/2024,,soils collected,
+99,BA,Control,5,0,0,6/23/2024,,,
+100,BA,Control,5,0,0,6/23/2024,,soils collected,
+105,BA,Control,6,0,0,6/23/2024,,,
+106,BA,Control,6,0,0,6/23/2024,,soils collected,
+107,BA,Control,6,4,0.0159,6/23/2024,,,ARA
+108,BA,Control,6,0,0,6/23/2024,,soils collected,
+117,BA,Control,6,0,0,6/23/2024,,,
+118,BA,Control,6,0,0,6/23/2024,,soils collected,
+119,BA,Control,6,0,0,6/23/2024,,soils collected,
+120,BA,Control,6,0,0,6/23/2024,,,
+129,BA,Control,7,0,0,6/23/2024,,soils collected,
+130,BA,Control,7,0,0,6/23/2024,,,
+131,BA,Control,7,0,0,6/23/2024,"premature, just cotyledons",,
+132,BA,Control,7,0,0,6/23/2024,,soils collected,
+141,BA,Control,8,0,0,6/23/2024,,,
+142,BA,Control,8,0,0,6/23/2024,,soils collected,
+143,BA,Control,8,DEAD,DEAD,6/23/2024,,,
+144,BA,Control,8,0,0,6/23/2024,,soils collected,
+153,BA,Control,8,0,0,6/23/2024,,soils collected,
+154,BA,Control,8,0,0,6/23/2024,,,
+155,BA,Control,8,0,0,6/23/2024,,soils collected,
+156,BA,Control,8,0,0,6/23/2024,,soils collected,
+165,BA,Control,9,0,0,6/23/2024,,soils collected,
+166,BA,Control,9,0,0,6/23/2024,,soils collected,ARA
+167,BA,Control,9,0,0,6/23/2024,,,
+168,BA,Control,9,0,0,6/23/2024,,soils collected,
+177,BA,Control,9,0,0,6/23/2024,,soils collected,
+178,BA,Control,9,DEAD,DEAD,6/23/2024,,,
+179,BA,Control,9,0,0,6/23/2024,,soils collected,
+180,BA,Control,9,0,0,6/23/2024,,soils collected,
+189,BA,Control,10,0,0,6/23/2024,,,
+190,BA,Control,10,0,0,6/23/2024,,,
+191,BA,Control,10,0,0,6/23/2024,"premature, just cotyledons",soils collected,
+192,BA,Control,10,0,0,6/23/2024,,soils collected,
+205,BA,Control,11,0,0,6/23/2024,,,
+206,BA,Control,11,0,0,6/23/2024,,,
+207,BA,Control,11,2,0.0139,6/23/2024,,soils collected,
+208,BA,Control,11,0,0,6/23/2024,,soils collected,
+217,BA,Control,11,16,0.0579,6/23/2024,,soils collected,
+218,BA,Control,11,0,0,6/23/2024,,soils collected,
+219,BA,Control,11,0,0,6/23/2024,,,
+220,BA,Control,11,0,0,6/23/2024,,,
+225,BA,Control,12,0,0,6/23/2024,,,
+226,BA,Control,12,0,0,6/23/2024,,soils collected,
+227,BA,Control,12,0,0,6/23/2024,,soils collected,
+228,BA,Control,12,0,0,6/23/2024,,,
+237,BA,Control,12,0,0,6/23/2024,,,
+238,BA,Control,12,0,0,6/23/2024,,soils collected,
+239,BA,Control,12,0,0,6/23/2024,,,
+240,BA,Control,12,5,0.0198,6/23/2024,,,
+249,BA,Control,13,0,0,6/23/2024,,soils collected,
+250,BA,Control,13,0,0,6/23/2024,,soils collected,
+251,BA,Control,13,0,0,6/23/2024,,,
+252,BA,Control,13,0,0,6/23/2024,,soils collected,
+261,BA,Control,14,8,0.0516,6/23/2024,,soils collected,
+262,BA,Control,14,DEAD,DEAD,6/23/2024,,,
+263,BA,Control,14,0,0,6/23/2024,,soils collected,
+264,BA,Control,14,0,0,6/23/2024,,,
+273,BA,Control,14,0,0,6/23/2024,,,
+274,BA,Control,14,0,0,6/23/2024,,soils collected,
+275,BA,Control,14,0,0,6/23/2024,,soils collected,
+276,BA,Control,14,0,0,6/23/2024,"premature, just cotyledons",soils collected,
+285,BA,Control,15,0,0,6/23/2024,,soils collected,
+286,BA,Control,15,0,0,6/23/2024,,,
+287,BA,Control,15,0,0,6/23/2024,,,
+288,BA,Control,15,0,0,6/23/2024,,,
+297,BA,Control,15,0,0,6/23/2024,,soils collected,
+298,BA,Control,15,0,0,6/23/2024,,,
+299,BA,Control,15,8,0.0239,6/23/2024,,soils collected,ARA
+300,BA,Control,15,12,0.0134,6/23/2024,,soils collected,ARA
+309,BA,S1,16,8,0.01,6/19/2024,,soils collected,
+310,BA,S1,16,8,0.016,6/19/2024,,soils collected,
+311,BA,S1,16,3,0.0098,6/19/2024,,,
+312,BA,S1,16,3,0.0066,6/20/2024,nodules all black (pic),,
+321,BA,S1,17,14,0.0286,6/19/2024,,,
+322,BA,S1,17,27,0.0203,6/20/2024,,soils collected,
+323,BA,S1,17,17,0.0506,6/19/2024,,,
+324,BA,S1,17,5,0.0202,6/19/2024,,,
+333,BA,S1,17,24,0.0614,6/20/2024,,soils collected,
+334,BA,S1,17,11,0.0106,6/19/2024,,,
+335,BA,S1,17,4,0.018,6/19/2024,,,
+336,BA,S1,17,10,0.0333,6/20/2024,,soils collected,
+345,BA,S1,18,17,0.0616,6/20/2024,air sample hard to push into vial,soils collected,ARA
+346,BA,S1,18,28,0.0294,6/20/2024,,soils collected,
+347,BA,S1,18,18,0.0283,6/20/2024,,,
+348,BA,S1,18,4,0.0256,6/20/2024,,soils collected,
+357,BA,S1,18,12,0.0152,6/20/2024,,soils collected,
+358,BA,S1,18,5,0.0096,6/20/2024,,,
+359,BA,S1,18,9,0.0208,6/20/2024,,soils collected,
+360,BA,S1,18,7,0.0214,6/20/2024,,,
+369,BA,S1,19,6,0.0227,6/20/2024,,soils collected,
+370,BA,S1,19,5,0.0275,6/20/2024,,,
+371,BA,S1,19,7,0.0156,6/20/2024,,soils collected,
+372,BA,S1,19,10,0.0153,6/20/2024,,,
+381,BA,S1,20,14,0.0298,6/20/2024,,soils collected,
+382,BA,S1,20,19,0.02,6/20/2024,,,
+383,BA,S1,20,10,0.0103,6/20/2024,,soils collected,
+384,BA,S1,20,6,0.0049,6/20/2024,,,
+393,BA,S1,20,14,0.0351,6/20/2024,,soils collected,
+394,BA,S1,20,11,0.0583,6/20/2024,,,
+395,BA,S1,20,5,0.0251,6/20/2024,,soils collected,
+396,BA,S1,20,4,0.0028,6/20/2024,"small, almost dead",,
+405,BA,S1,21,30,0.0279,6/21/2024,,soils collected,
+406,BA,S1,21,24,0.0276,6/21/2024,,,
+407,BA,S1,21,25,0.0229,6/21/2024,,soils collected,
+408,BA,S1,21,5,0.0156,6/21/2024,,,
+417,BA,S1,21,4,0.009,6/21/2024,,soils collected,
+418,BA,S1,21,10,0.0131,6/21/2024,,,
+419,BA,S1,21,8,0.0084,6/21/2024,,soils collected,
+420,BA,S1,21,6,0.009,6/21/2024,,,
+429,BA,S1,22,8,0.0157,6/21/2024,,soils collected,
+430,BA,S1,22,7,0.0226,6/21/2024,,soils collected,
+431,BA,S1,22,15,0.0125,6/21/2024,,,
+432,BA,S1,22,19,0.0327,6/21/2024,,soils collected,
+441,BA,S1,23,6,0.0098,6/21/2024,,soils collected,
+442,BA,S1,23,9,0.0326,6/21/2024,,,
+443,BA,S1,23,6,0.0154,6/21/2024,,,
+444,BA,S1,23,8,0.0453,6/21/2024,,soils collected,
+453,BA,S1,23,13,0.0143,6/21/2024,,soils collected,
+454,BA,S1,23,1,0.0088,6/21/2024,,,
+455,BA,S1,23,37,0.0133,6/21/2024,,soils collected,
+456,BA,S1,23,6,0.0128,6/21/2024,,,
+465,BA,S1,24,19,0.0298,6/21/2024,,soils collected,
+466,BA,S1,24,6,0.0071,6/21/2024,,,
+467,BA,S1,24,8,0.011,6/21/2024,,,
+468,BA,S1,24,12,0.0205,6/21/2024,,soils collected,
+477,BA,S1,24,12,0.0179,6/21/2024,,,
+478,BA,S1,24,7,0.0244,6/21/2024,,soils collected,
+479,BA,S1,24,10,0.0094,6/21/2024,,,ARA
+480,BA,S1,24,6,0.007,6/21/2024,,,
+489,BA,S1,25,8,0.0137,6/21/2024,,,
+490,BA,S1,25,11,0.065,6/21/2024,,soils collected,
+491,BA,S1,25,11,0.0224,6/21/2024,,soils collected,
+492,BA,S1,25,9,0.0208,6/21/2024,,,
+505,BA,S1,26,2,0.0117,6/22/2024,,soils collected,ARA
+506,BA,S1,26,5,0.0062,6/22/2024,,,
+507,BA,S1,26,9,0.0022,6/22/2024,,,
+508,BA,S1,26,9,0.0074,6/22/2024,,,
+517,BA,S1,26,6,0.0221,6/23/2024,,soils collected,ARA
+518,BA,S1,26,5,0.0062,6/23/2024,,soils collected,ARA
+519,BA,S1,26,11,0.0216,6/23/2024,,soils collected,
+520,BA,S1,26,1,0.0384,6/22/2024,,fused (pics),
+525,BA,S1,27,6,0.0125,6/22/2024,,,
+526,BA,S1,27,16,0.0176,6/22/2024,,,
+527,BA,S1,27,5,0.0215,6/23/2024,,soils collected,
+528,BA,S1,27,17,0.0423,6/23/2024,,soils collected,ARA
+537,BA,S1,27,5,0.0248,6/22/2024,"premature, just cotyledons",,
+538,BA,S1,27,0,0,6/22/2024,,,
+539,BA,S1,27,24,0.0159,6/22/2024,,,
+540,BA,S1,27,0,0,6/22/2024,plant prematurely died; hardly no anpp or bnpp (pics); should be NA instead of zero?,,
+549,BA,S1,28,13,0.0171,6/23/2024,,soils collected,
+550,BA,S1,28,18,0.0543,6/23/2024,,soils collected,ARA
+551,BA,S1,28,5,0.0053,6/23/2024,,soils collected,ARA
+552,BA,S1,28,0,0,6/22/2024,"premature, just cotyledons",,
+561,BA,S1,29,3,0.0146,6/23/2024,,soils collected,
+562,BA,S1,29,6,0.0261,6/22/2024,,,
+563,BA,S1,29,19,0.0178,6/22/2024,,,
+564,BA,S1,29,8,0.0149,6/23/2024,,soils collected,
+573,BA,S1,29,9,0.0519,6/23/2024,,soils collected,
+574,BA,S1,29,7,0.0194,6/23/2024,,soils collected,ARA
+575,BA,S1,29,3,0.0133,6/23/2024,,soils collected,
+576,BA,S1,29,9,0.0219,6/23/2024,,soils collected,ARA
+581,BA,S1,30,28,0.0176,6/23/2024,,soils collected,ARA
+582,BA,S1,30,11,0.0263,6/23/2024,,soils collected,
+583,BA,S1,30,5,0.0661,6/23/2024,,soils collected,
+584,BA,S1,30,3,0.0098,6/23/2024,,soils collected,ARA
+593,BA,S1,30,12,0.0992,6/23/2024,,soils collected,
+594,BA,S1,30,8,0.0466,6/23/2024,,soils collected,ARA
+595,BA,S1,30,DEAD,DEAD,6/22/2024,pic,,
+596,BA,S1,30,5,0.0219,6/22/2024,,,
+609,BA,S2,31,0,0,6/19/2024,,soils collected,
+610,BA,S2,31,0,0,6/19/2024,,,
+611,BA,S2,31,0,0,6/23/2024,,,
+637,BA,S2,32,0,0,6/23/2024,,,
+642,BA,S2,33,0,0,6/23/2024,,,
+654,BA,S2,33,0,0,6/23/2024,,,
+685,BA,S2,35,0,0,6/23/2024,,,
+687,BA,S2,35,0,0,6/23/2024,,,
+707,BA,S2,36,0,0,6/23/2024,,,
+741,BA,S2,38,0,0,6/23/2024,,,
+756,BA,S2,38,0,0,6/23/2024,,,
+767,BA,S2,39,0,0,6/23/2024,,,
+791,BA,S2,40,0,0,6/23/2024,,,
+801,BA,S2,41,0,0,6/23/2024,,,
+828,BA,S2,42,0,0,6/23/2024,,,
+850,BA,S2,43,32,0.0334,6/23/2024,,soils collected,ARA
+851,BA,S2,43,0,0,6/19/2024,,soils collected,
+852,BA,S2,43,0,0,6/23/2024,,,
+861,BA,S2,44,0,0,6/23/2024,,,
+888,BA,S2,45,0,0,6/23/2024,,,
+900,BA,S2,45,0,0,6/23/2024,,,
+909,BA,S3,46,11,0.0131,6/19/2024,,soils collected,
+910,BA,S3,46,11,0.0055,6/20/2024,,,
+911,BA,S3,46,0,0,6/20/2024,premature (pic),,
+912,BA,S3,46,12,0.0083,6/20/2024,plant and nodules look dead,,
+921,BA,S3,47,11,0.0026,6/20/2024,plant and nodules look dead,,
+922,BA,S3,47,14,0.0045,6/20/2024,plant and nodules look mostly dead,,
+923,BA,S3,47,9,0.005,6/20/2024,found bug carcas on top of soil; plant and nodules look mostly dead,,
+924,BA,S3,47,9,0.005,6/20/2024,plant and nodules look mostly dead,,
+933,BA,S3,47,4,0.0011,6/20/2024,plant looks dead but nodules look fine,,
+934,BA,S3,47,6,0.0088,6/20/2024,,soils collected,ARA
+935,BA,S3,47,6,0.0163,6/20/2024,plant looks dead but nodules look fine,,
+936,BA,S3,47,8,0.0106,6/20/2024,,,
+945,BA,S3,48,8,0.0048,6/20/2024,,soils collected,ARA
+946,BA,S3,48,10,0.0159,6/21/2024,,soils collected,
+947,BA,S3,48,23,0.0213,6/21/2024,,,
+948,BA,S3,48,7,0.0172,6/21/2024,,,
+957,BA,S3,48,9,0.0193,6/21/2024,,soils collected,
+958,BA,S3,48,16,0.0129,6/21/2024,,,
+959,BA,S3,48,4,0.0057,6/21/2024,,soils collected,
+960,BA,S3,48,0,0,6/21/2024,"premature, just cotyledons",,
+969,BA,S3,49,11,0.0111,6/21/2024,,,
+970,BA,S3,49,12,0.0091,6/21/2024,,soils collected,
+971,BA,S3,49,9,0.0064,6/21/2024,,soils collected,
+972,BA,S3,49,7,0.0094,6/21/2024,,,
+985,BA,S3,50,4,0.0115,6/21/2024,one nodule has like 3 fused nodules,soils collected,
+986,BA,S3,50,10,0.0137,6/21/2024,,,
+987,BA,S3,50,7,0.0053,6/21/2024,,soils collected,
+988,BA,S3,50,5,0.0044,6/21/2024,,,
+997,BA,S3,50,10,0.0123,6/21/2024,,,
+998,BA,S3,50,5,0.0102,6/21/2024,,soils collected,
+999,BA,S3,50,12,0.0099,6/21/2024,sample difficult to push into gas vial,soils collected,
+1000,BA,S3,50,0,0,6/21/2024,"premature, just cotyledons",,
+1001,BA,S3,51,17,0.0168,6/21/2024,,soils collected,
+1002,BA,S3,51,8,0.0128,6/21/2024,several fused nodules,soils collected,
+1003,BA,S3,51,12,0.004,6/21/2024,,,
+1004,BA,S3,51,DEAD,DEAD,6/21/2024,,,
+1013,BA,S3,51,5,0.0077,6/21/2024,,,
+1014,BA,S3,51,0,0,6/21/2024,"premature, just cotyledons",,
+1015,BA,S3,51,DEAD,DEAD,6/21/2024,,,
+1016,BA,S3,51,16,0.008,6/21/2024,,,
+1029,BA,S3,52,3,0.0022,6/21/2024,gas sample hard to push into vial,soils collected,
+1030,BA,S3,52,11,0.0085,6/21/2024,,soils collected,
+1031,BA,S3,52,20,0.012,6/21/2024,,,
+1032,BA,S3,52,12,0.006,6/21/2024,,soils collected,ARA
+1041,BA,S3,53,0,0,6/21/2024,"premature, just cotyledons",,
+1042,BA,S3,53,8,0.0067,6/21/2024,,soils collected,ARA
+1043,BA,S3,53,8,0.0105,6/21/2024,,soils collected,
+1044,BA,S3,53,0,0,6/21/2024,"big ANPP, but no nodules!",,
+1053,BA,S3,53,0,0,6/21/2024,"premature, just cotyledons",,
+1054,BA,S3,53,15,0.0086,6/21/2024,,soils collected,
+1055,BA,S3,53,9,0.0043,6/21/2024,,soils collected,
+1056,BA,S3,53,11,0.0061,6/21/2024,,,
+1065,BA,S3,54,6,0.0043,6/21/2024,,,
+1066,BA,S3,54,23,0.0148,6/22/2024,,soils collected,
+1067,BA,S3,54,11,0.0113,6/22/2024,,soils collected,
+1068,BA,S3,54,15,0.0063,6/22/2024,,,
+1077,BA,S3,54,12,0.009,6/22/2024,,soils collected,
+1078,BA,S3,54,9,0.0052,6/22/2024,,,
+1079,BA,S3,54,2,0.0043,6/22/2024,,soils collected,
+1080,BA,S3,54,1,0.0096,6/22/2024,,,
+1089,BA,S3,55,13,0.0093,6/22/2024,,soils collected,
+1090,BA,S3,55,4,0.0048,6/22/2024,,,
+1091,BA,S3,55,8,0.0093,6/22/2024,,soils collected,ARA
+1092,BA,S3,55,7,0.0107,6/22/2024,,,
+1101,BA,S3,56,6,0.0042,6/22/2024,,soils collected,
+1102,BA,S3,56,4,0.0088,6/22/2024,,soils collected,
+1103,BA,S3,56,6,0.0198,6/22/2024,,soils collected,ARA
+1104,BA,S3,56,9,0.0177,6/22/2024,,soils collected,ARA
+1113,BA,S3,56,8,0.0053,6/22/2024,,,
+1114,BA,S3,56,5,0.0035,6/22/2024,,,
+1115,BA,S3,56,7,0.0097,6/22/2024,,,
+1116,BA,S3,56,8,0.0133,6/22/2024,,,
+1125,BA,S3,57,13,0.0131,6/22/2024,,soils collected,
+1126,BA,S3,57,0,0,6/22/2024,premature growth,,
+1127,BA,S3,57,7,0.0124,6/22/2024,,soils collected,
+1128,BA,S3,57,14,0.0092,6/22/2024,,,
+1137,BA,S3,57,6,0.0207,6/22/2024,,soils collected,
+1138,BA,S3,57,4,0.0257,6/22/2024,,soils collected,ARA
+1139,BA,S3,57,7,0.0096,6/22/2024,,soils collected,
+1140,BA,S3,57,7,0.0058,6/22/2024,,,
+1149,BA,S3,58,12,0.0251,6/22/2024,,soils collected,
+1150,BA,S3,58,4,0.0063,6/22/2024,,soils collected,ARA
+1151,BA,S3,58,12,0.0146,6/22/2024,,soils collected,
+1152,BA,S3,58,7,0.0037,6/22/2024,,soils collected,
+1161,BA,S3,59,17,0.0064,6/22/2024,,soils collected,
+1162,BA,S3,59,24,0.0205,6/22/2024,,soils collected,ARA
+1163,BA,S3,59,0,0,6/22/2024,"premature, just cotyledons",,
+1164,BA,S3,59,0,0,6/22/2024,"premature, just cotyledons",,
+1173,BA,S3,59,3,0.0041,6/22/2024,,soils collected,
+1174,BA,S3,59,2,0.0017,6/22/2024,"premature, just cotyledons",,
+1175,BA,S3,59,16,0.0138,6/22/2024,,soils collected,ARA
+1176,BA,S3,59,4,0.0031,6/22/2024,,soils collected,
+1185,BA,S3,60,4,0.0083,6/22/2024,,,
+1186,BA,S3,60,9,0.014,6/22/2024,,soils collected,
+1187,BA,S3,60,5,0.0167,6/22/2024,,,
+1188,BA,S3,60,32,0.0141,6/22/2024,,soils collected,ARA
+1197,BA,S3,60,5,0.0072,6/22/2024,,soils collected,
+1198,BA,S3,60,12,0.0061,6/22/2024,,,
+1199,BA,S3,60,9,0.0102,6/22/2024,,,
+1200,BA,S3,60,6,0.0072,6/22/2024,,,
+1,CN ,Control,1,0,0,6/7/2024,,soils collected,
+2,CN ,Control,1,0,0,6/7/2024,,soils collected,
+3,CN ,Control,1,0,0,6/7/2024,,soils collected,
+4,CN ,Control,1,0,0,6/7/2024,,soils collected,
+13,CN ,Control,1,0,0,6/7/2024,,soils collected,
+14,CN ,Control,1,0,0,6/7/2024,,soils collected,
+15,CN ,Control,1,0,0,6/7/2024,,soils collected,
+16,CN ,Control,1,0,0,6/8/2024,,soils collected,
+29,CN ,Control,2,0,0,6/8/2024,,soils collected,
+30,CN ,Control,2,0,0,6/10/2024,,soils collected,
+31,CN ,Control,2,0,0,6/10/2024,,soils collected,
+32,CN ,Control,2,0,0,6/10/2024,,soils collected,
+41,CN ,Control,3,0,0,6/12/2024,,soils collected,
+42,CN ,Control,3,0,0,6/10/2024,,soils collected,
+43,CN ,Control,3,0,0,6/10/2024,,soils collected,
+44,CN ,Control,3,0,0,6/10/2024,,soils collected,
+53,CN ,Control,3,0,0,6/10/2024,,soils collected,
+54,CN ,Control,3,0,0,6/10/2024,,soils collected,
+55,CN ,Control,3,0,0,6/10/2024,,soils collected,
+56,CN ,Control,3,0,0,6/10/2024,,soils collected,
+65,CN ,Control,4,0,0,6/10/2024,,soils collected,
+66,CN ,Control,4,1,NotDetected,6/10/2024,,soils collected,
+67,CN ,Control,4,0,0,6/10/2024,,soils collected,
+68,CN ,Control,4,0,0,6/10/2024,,soils collected,
+77,CN ,Control,4,0,0,6/10/2024,,soils collected,
+78,CN ,Control,4,0,0,6/10/2024,,soils collected,
+79,CN ,Control,4,0,0,6/10/2024,,soils collected,
+80,CN ,Control,4,0,0,6/10/2024,,soils collected,
+89,CN ,Control,5,0,0,6/11/2024,,soils collected,
+90,CN ,Control,5,0,0,6/11/2024,,soils collected,
+91,CN ,Control,5,0,0,6/11/2024,,soils collected,
+92,CN ,Control,5,0,0,6/11/2024,,soils collected,
+101,CN ,Control,6,0,0,6/11/2024,,soils collected,
+102,CN ,Control,6,0,0,6/11/2024,,soils collected,
+103,CN ,Control,6,0,0,6/11/2024,,soils collected,
+104,CN ,Control,6,0,0,6/11/2024,,,
+113,CN ,Control,6,0,0,6/11/2024,,,
+114,CN ,Control,6,0,0,6/11/2024,,,
+115,CN ,Control,6,0,0,6/11/2024,,,
+116,CN ,Control,6,0,0,6/11/2024,,soils collected,
+125,CN ,Control,7,7,0.0185,6/12/2024,,soils collected,
+126,CN ,Control,7,0,0,6/11/2024,,,
+127,CN ,Control,7,0,0,6/11/2024,,,
+128,CN ,Control,7,0,0,6/12/2024,,,
+137,CN ,Control,7,0,0,6/12/2024,,soils collected,ARA
+138,CN ,Control,7,0,0,6/12/2024,,soils collected,
+139,CN ,Control,7,0,0,6/13/2024,,soils collected,
+140,CN ,Control,7,0,0,6/13/2024,,,
+149,CN ,Control,8,0,0,6/13/2024,,,
+150,CN ,Control,8,0,0,6/13/2024,,,
+151,CN ,Control,8,0,0,6/13/2024,,soils collected,
+152,CN ,Control,8,0,0,6/13/2024,,,
+161,CN ,Control,9,14,0.0027,6/13/2024,"gas sample, no soil",,ARA
+162,CN ,Control,9,0,0,6/13/2024,,,
+163,CN ,Control,9,0,0,6/13/2024,,,
+164,CN ,Control,9,0,0,6/13/2024,,,
+173,CN ,Control,9,0,0,6/13/2024,,,
+174,CN ,Control,9,0,0,6/13/2024,,,
+175,CN ,Control,9,0,0,6/13/2024,,,
+176,CN ,Control,9,0,0,6/13/2024,,,
+181,CN ,Control,10,0,0,6/11/2024,,,
+182,CN ,Control,10,0,0,6/13/2024,,,
+183,CN ,Control,10,0,0,6/13/2024,,,
+184,CN ,Control,10,0,0,6/13/2024,,,
+193,CN ,Control,10,0,0,6/13/2024,,,
+194,CN ,Control,10,0,0,6/13/2024,,,
+195,CN ,Control,10,0,0,6/13/2024,,,
+196,CN ,Control,10,0,0,6/13/2024,,,
+209,CN ,Control,11,0,0,6/13/2024,,,
+210,CN ,Control,11,0,0,6/13/2024,,,
+211,CN ,Control,11,0,0,6/13/2024,,,
+212,CN ,Control,11,0,0,6/13/2024,,soils collected,
+221,CN ,Control,12,0,0,6/13/2024,,,
+222,CN ,Control,12,0,0,6/13/2024,,,
+223,CN ,Control,12,0,0,6/13/2024,,,
+224,CN ,Control,12,0,0,6/13/2024,,soils collected,
+233,CN ,Control,12,0,0,6/13/2024,,,
+234,CN ,Control,12,0,0,6/13/2024,,,
+235,CN ,Control,12,0,0,6/13/2024,,soils collected,
+236,CN ,Control,12,0,0,6/13/2024,,,
+245,CN ,Control,13,0,0,6/13/2024,,,
+246,CN ,Control,13,0,0,6/13/2024,,,
+247,CN ,Control,13,52,0.0373,6/13/2024,,soils collected,ARA
+248,CN ,Control,13,0,0,6/13/2024,,soils collected,ARA
+257,CN ,Control,13,0,0,6/13/2024,,,
+258,CN ,Control,13,2,0.002,6/13/2024,,soils collected,ARA
+259,CN ,Control,13,0,0,6/13/2024,,,
+260,CN ,Control,13,0,0,6/13/2024,,,
+269,CN ,Control,14,3,0.005,6/13/2024,,soils collected,ARA
+270,CN ,Control,14,0,0,6/13/2024,,,
+271,CN ,Control,14,0,0,6/13/2024,,,
+272,CN ,Control,14,0,0,6/13/2024,,soils collected,
+281,CN ,Control,15,0,0,6/13/2024,,,
+282,CN ,Control,15,5,0.0109,6/13/2024,,soils collected,
+283,CN ,Control,15,0,0,6/14/2024,,soils collected,
+284,CN ,Control,15,0,0,6/14/2024,,soils collected,
+293,CN ,Control,15,0,0,6/14/2024,,,
+294,CN ,Control,15,0,0,6/14/2024,,,
+295,CN ,Control,15,0,0,6/14/2024,,soils collected,
+296,CN ,Control,15,36,0.0196,6/14/2024,,soils collected,ARA
+305,CN ,S1,16,34,0.0093,6/7/2024,,soils collected,ARA
+306,CN ,S1,16,41,0.0131,6/7/2024,,,
+307,CN ,S1,16,29,0.012,6/7/2024,,soils collected,ARA
+308,CN ,S1,16,32,0.027,6/7/2024,,soils collected,ARA
+317,CN ,S1,16,36,0.0096,6/7/2024,,soils collected,ARA
+318,CN ,S1,16,39,0.0188,6/7/2024,,,
+319,CN ,S1,16,40,0.0111,6/7/2024,,soils collected,ARA
+320,CN ,S1,16,38,0.0136,6/7/2024,,,
+329,CN ,S1,17,36,0.0431,6/7/2024,,soils collected,ARA
+330,CN ,S1,17,35,0.0145,6/8/2024,35 alive and 6 dead (0.0007),,
+331,CN ,S1,17,23,0.0595,6/8/2024,,soils collected,ARA
+332,CN ,S1,17,50,0.0533,6/8/2024,,soils collected,ARA
+341,CN ,S1,18,16,0.008,6/8/2024,,,
+342,CN ,S1,18,55,0.0401,6/8/2024,,soils collected,ARA
+343,CN ,S1,18,44,0.035,6/8/2024,,,
+344,CN ,S1,18,30,0.0113,6/8/2024,,soils collected,ARA
+353,CN ,S1,18,41,0.0364,6/8/2024,,,
+354,CN ,S1,18,73,0.0401,6/8/2024,,,
+355,CN ,S1,18,22,0.0183,6/8/2024,,soils collected,ARA
+356,CN ,S1,18,42,0.0341,6/8/2024,,,
+365,CN ,S1,19,41,0.0444,6/8/2024,,,
+366,CN ,S1,19,42,0.0115,6/8/2024,,soils collected,ARA
+367,CN ,S1,19,36,0.0266,6/8/2024,,soils collected,ARA
+368,CN ,S1,19,56,0.0486,6/9/2024,,,
+377,CN ,S1,19,35,0.0352,6/9/2024,,soils collected,ARA
+378,CN ,S1,19,44,0.0168,6/9/2024,,,
+379,CN ,S1,19,60,0.0276,6/9/2024,,soils collected,ARA
+380,CN ,S1,19,28,0.0367,6/9/2024,,,
+389,CN ,S1,20,34,0.0268,6/9/2024,,soils collected,ARA
+390,CN ,S1,20,33,0.0245,6/9/2024,,,
+391,CN ,S1,20,54,0.0282,6/9/2024,,soils collected,ARA
+392,CN ,S1,20,37,0.023,6/10/2024,,,
+401,CN ,S1,21,43,0.0181,6/10/2024,,soils collected,ARA
+402,CN ,S1,21,32,0.0286,6/10/2024,,,
+403,CN ,S1,21,28,0.0198,6/10/2024,,soils collected,ARA
+404,CN ,S1,21,13,0.015,6/10/2024,,soils collected,ARA
+413,CN ,S1,21,46,0.0235,6/10/2024,,,
+414,CN ,S1,21,66,0.021,6/10/2024,,,
+415,CN ,S1,21,56,0.0197,6/10/2024,,soils collected,ARA
+416,CN ,S1,21,67,0.0293,6/10/2024,,,
+425,CN ,S1,22,50,0.0445,6/10/2024,,soils collected,ARA
+426,CN ,S1,22,35,0.0161,6/10/2024,,,
+427,CN ,S1,22,46,0.0293,6/10/2024,,soils collected,ARA
+428,CN ,S1,22,32,0.0181,6/10/2024,,soils collected,ARA
+437,CN ,S1,22,29,0.0204,6/10/2024,,,
+438,CN ,S1,22,55,0.0269,6/10/2024,,,
+439,CN ,S1,22,47,0.0255,6/10/2024,,soils collected,ARA
+440,CN ,S1,22,24,0.0189,6/10/2024,,,
+449,CN ,S1,23,37,0.0242,6/10/2024,,,
+450,CN ,S1,23,42,0.0122,6/11/2024,,soils collected,ARA
+451,CN ,S1,23,47,0.0174,6/10/2024,one small nodule lost,,
+452,CN ,S1,23,65,0.0355,6/11/2024,,soils collected,ARA
+461,CN ,S1,24,36,0.0284,6/11/2024,,,
+462,CN ,S1,24,37,0.026,6/11/2024,,soils collected,ARA
+463,CN ,S1,24,85,0.0499,6/11/2024,,,
+464,CN ,S1,24,44,0.0412,6/12/2024,,soils collected,ARA
+473,CN ,S1,24,40,0.025,6/12/2024,,soils collected,ARA
+474,CN ,S1,24,82,0.0857,6/12/2024,,soils collected,ARA
+475,CN ,S1,24,50,0.0354,6/11/2024,,,
+476,CN ,S1,24,22,0.0151,6/12/2024,,soils collected,ARA
+485,CN ,S1,25,20,0.0239,6/11/2024,,,
+486,CN ,S1,25,42,0.025,6/12/2024,,soils collected,ARA
+487,CN ,S1,25,24,0.0103,6/12/2024,nodules look darker and dry (not dead yet),,
+488,CN ,S1,25,35,0.0227,6/12/2024,,soils collected,ARA
+497,CN ,S1,25,11,0.0124,6/12/2024,,,
+498,CN ,S1,25,22,0.0381,6/12/2024,,soils collected,ARA
+499,CN ,S1,25,21,0.0196,6/12/2024,,soils collected,ARA
+500,CN ,S1,25,12,0.0239,6/12/2024,,,
+509,CN ,S1,26,44,0.0284,6/13/2024,,,
+510,CN ,S1,26,29,0.0288,6/13/2024,,soils collected,ARA
+511,CN ,S1,26,36,0.0349,6/13/2024,,soils collected,ARA
+512,CN ,S1,26,30,0.0369,6/13/2024,,,
+521,CN ,S1,27,51,0.013,6/13/2024,,,
+522,CN ,S1,27,41,0.0395,6/13/2024,,soils collected,ARA
+523,CN ,S1,27,40,0.0143,6/13/2024,,,
+524,CN ,S1,27,42,0.0196,6/13/2024,,soils collected,ARA
+533,CN ,S1,27,43,0.0263,6/13/2024,,,
+534,CN ,S1,27,33,0.0247,6/13/2024,,,
+535,CN ,S1,27,39,0.0324,6/13/2024,,soils collected,ARA
+536,CN ,S1,27,15,0.0093,6/13/2024,,,
+545,CN ,S1,28,64,0.064,6/13/2024,,soils collected,ARA
+546,CN ,S1,28,76,0.0729,6/13/2024,,,
+547,CN ,S1,28,31,0.0285,6/13/2024,,soils collected,ARA
+548,CN ,S1,28,51,0.0208,6/13/2024,,,
+557,CN ,S1,28,48,0.0387,6/13/2024,,soils collected,ARA
+558,CN ,S1,28,103,0.0604,6/13/2024,,,
+559,CN ,S1,28,235,0.1837,6/13/2024,,soils collected,ARA
+560,CN ,S1,28,45,0.0151,6/13/2024,,,
+569,CN ,S1,29,79,0.0219,6/13/2024,,soils collected,ARA
+570,CN ,S1,29,35,0.0085,6/13/2024,,,
+571,CN ,S1,29,53,0.0254,6/13/2024,,,
+572,CN ,S1,29,39,0.0216,6/13/2024,,soils collected,ARA
+585,CN ,S1,30,33,0.0361,6/13/2024,,,
+586,CN ,S1,30,24,0.0241,6/13/2024,,,
+587,CN ,S1,30,16,0.0179,6/13/2024,,soils collected,ARA
+588,CN ,S1,30,22,0.0167,6/13/2024,,,
+597,CN ,S1,30,31,0.0284,6/13/2024,,soils collected,ARA
+598,CN ,S1,30,74,0.064,6/13/2024,,soils collected,ARA
+599,CN ,S1,30,27,0.0162,6/13/2024,,,
+600,CN ,S1,30,26,0.0222,6/13/2024,,soils collected,ARA
+605,CN ,S2,31,0,0,6/7/2024,,,
+606,CN ,S2,31,0,0,6/7/2024,,,
+607,CN ,S2,31,0,0,6/7/2024,,,
+608,CN ,S2,31,0,0,6/7/2024,,,
+617,CN ,S2,31,0,0,6/7/2024,,,
+618,CN ,S2,31,0,0,6/7/2024,,,
+619,CN ,S2,31,0,0,6/7/2024,,,
+620,CN ,S2,31,0,0,6/8/2024,,,
+629,CN ,S2,32,0,0,6/8/2024,,,
+630,CN ,S2,32,0,0,6/14/2024,,soils collected,ARA
+631,CN ,S2,32,0,0,6/14/2024,,soils collected,ARA
+632,CN ,S2,32,0,0,6/11/2024,,,
+645,CN ,S2,33,0,0,6/14/2024,,,
+646,CN ,S2,33,0,0,6/11/2024,,,
+647,CN ,S2,33,0,0,6/14/2024,,,
+648,CN ,S2,33,0,0,6/14/2024,,,
+657,CN ,S2,33,0,0,6/11/2024,,,
+658,CN ,S2,33,1,0.0081,6/14/2024,,soils collected,ARA
+659,CN ,S2,33,0,0,6/11/2024,,,
+660,CN ,S2,33,0,0,6/14/2024,,,
+665,CN ,S2,34,0,0,6/11/2024,,,
+666,CN ,S2,34,0,0,6/12/2024,,,
+667,CN ,S2,34,0,0,6/14/2024,,,
+668,CN ,S2,34,0,0,6/12/2024,,,
+677,CN ,S2,34,0,0,6/12/2024,,,
+678,CN ,S2,34,0,0,6/14/2024,,,
+679,CN ,S2,34,0,0,6/12/2024,,,
+680,CN ,S2,34,0,0,6/14/2024,,soils collected,ARA
+689,CN ,S2,35,0,0,6/14/2024,,,
+690,CN ,S2,35,0,0,6/12/2024,,,
+691,CN ,S2,35,0,0,6/14/2024,,,
+692,CN ,S2,35,0,0,6/12/2024,,,
+701,CN ,S2,36,0,0,6/14/2024,,,
+702,CN ,S2,36,0,0,6/12/2024,,,
+703,CN ,S2,36,0,0,6/14/2024,,,
+704,CN ,S2,36,0,0,6/14/2024,,,
+713,CN ,S2,36,0,0,6/14/2024,,,
+714,CN ,S2,36,2,0.0027,6/14/2024,look fake,soils collected,ARA
+715,CN ,S2,36,0,0,6/14/2024,,,
+716,CN ,S2,36,0,0,6/14/2024,,soils collected,ARA
+725,CN ,S2,37,0,0,6/14/2024,,,
+726,CN ,S2,37,0,0,6/14/2024,,,
+727,CN ,S2,37,0,0,6/14/2024,,,
+728,CN ,S2,37,0,0,6/14/2024,,,
+737,CN ,S2,37,0,0,6/14/2024,,,
+738,CN ,S2,37,0,0,6/14/2024,,,
+739,CN ,S2,37,0,0,6/14/2024,,,
+740,CN ,S2,37,0,0,6/14/2024,,,
+749,CN ,S2,38,0,0,6/14/2024,,,
+750,CN ,S2,38,0,0,6/14/2024,,,
+751,CN ,S2,38,0,0,6/14/2024,,,
+752,CN ,S2,38,0,0,6/14/2024,,,
+761,CN ,S2,39,0,0,6/14/2024,,soils collected,ARA
+762,CN ,S2,39,0,0,6/14/2024,,,
+763,CN ,S2,39,0,0,6/14/2024,,,
+764,CN ,S2,39,0,0,6/14/2024,,,
+773,CN ,S2,39,0,0,6/14/2024,,,
+774,CN ,S2,39,0,0,6/14/2024,,,
+775,CN ,S2,39,0,0,6/14/2024,,,
+776,CN ,S2,39,0,0,6/14/2024,,,
+785,CN ,S2,40,0,0,6/14/2024,,,
+786,CN ,S2,40,0,0,6/14/2024,,,
+787,CN ,S2,40,0,0,6/14/2024,,,
+788,CN ,S2,40,0,0,6/14/2024,,,
+797,CN ,S2,40,0,0,6/14/2024,,,
+798,CN ,S2,40,0,0,6/17/2024,,,
+799,CN ,S2,40,0,0,6/17/2024,,,
+800,CN ,S2,40,0,0,6/17/2024,,,
+809,CN ,S2,41,0,0,6/17/2024,,,
+810,CN ,S2,41,0,0,6/17/2024,,,
+811,CN ,S2,41,18,0.0407,6/17/2024,,soils collected,ARA
+812,CN ,S2,41,0,0,6/17/2024,,,
+821,CN ,S2,42,0,0,6/17/2024,,,
+822,CN ,S2,42,0,0,6/17/2024,,,
+823,CN ,S2,42,0,0,6/17/2024,,,
+824,CN ,S2,42,0,0,6/17/2024,,,
+833,CN ,S2,42,0,0,6/17/2024,,,
+834,CN ,S2,42,0,0,6/17/2024,,,
+835,CN ,S2,42,9,0.0236,6/17/2024,,soils collected,ARA
+836,CN ,S2,42,5,0.0106,6/17/2024,,soils collected,ARA
+845,CN ,S2,43,0,0,6/17/2024,,,
+846,CN ,S2,43,0,0,6/17/2024,,,
+847,CN ,S2,43,0,0,6/17/2024,,,
+848,CN ,S2,43,0,0,6/17/2024,,,
+857,CN ,S2,43,0,0,6/17/2024,,,
+858,CN ,S2,43,0,0,6/17/2024,,,
+859,CN ,S2,43,6,0.009,6/17/2024,,soils collected,ARA
+860,CN ,S2,43,0,0,6/17/2024,,,
+869,CN ,S2,44,0,0,6/17/2024,,,
+870,CN ,S2,44,0,0,6/17/2024,,,
+871,CN ,S2,44,0,0,6/17/2024,,,
+872,CN ,S2,44,0,0,6/17/2024,,,
+881,CN ,S2,45,0,0,6/17/2024,,,
+882,CN ,S2,45,0,0,6/17/2024,,,
+883,CN ,S2,45,0,0,6/17/2024,,,
+884,CN ,S2,45,0,0,6/17/2024,,,
+893,CN ,S2,45,0,0,6/17/2024,,,
+894,CN ,S2,45,5,0.0141,6/17/2024,,soils collected,ARA
+895,CN ,S2,45,0,0,6/17/2024,,,
+896,CN ,S2,45,0,0,6/17/2024,,soils collected,ARA
+905,CN ,S3,46,44,0.012,6/7/2024,,,
+906,CN ,S3,46,28,0.0327,6/7/2024,,soils collected,ARA
+907,CN ,S3,46,21,0.0154,6/7/2024,,soils collected,ARA
+908,CN ,S3,46,63,0.0422,6/7/2024,,,
+917,CN ,S3,46,27,0.0088,6/7/2024,,soils collected,ARA
+918,CN ,S3,46,36,0.0323,6/7/2024,,,
+919,CN ,S3,46,33,0.0122,6/7/2024,,,
+920,CN ,S3,46,34,0.0123,6/7/2024,,soils collected,ARA
+929,CN ,S3,47,32,0.0206,6/7/2024,,soils collected,ARA
+930,CN ,S3,47,19,0.02,6/7/2024,,soils collected,ARA
+931,CN ,S3,47,19,0.014,6/8/2024,,,
+932,CN ,S3,47,28,0.0258,6/8/2024,,soils collected,ARA
+941,CN ,S3,48,51,0.0307,6/8/2024,,,
+942,CN ,S3,48,46,0.0317,6/8/2024,,soils collected,ARA
+943,CN ,S3,48,31,0.0141,6/8/2024,,,
+944,CN ,S3,48,17,0.0061,6/8/2024,nodules spilled before weighing. Recovered 11 and weighed them (JS),soils collected,ARA
+953,CN ,S3,48,31,0.0338,6/8/2024,,,
+954,CN ,S3,48,19,0.0272,6/8/2024,,soils collected,ARA
+955,CN ,S3,48,24,0.0713,6/8/2024,,,
+956,CN ,S3,48,30,0.028,6/8/2024,,soils collected,ARA
+965,CN ,S3,49,44,0.0185,6/9/2024,,,
+966,CN ,S3,49,13,0.0081,6/9/2024,,soils collected,ARA
+967,CN ,S3,49,30,0.0207,6/9/2024,,soils collected,ARA
+968,CN ,S3,49,51,0.0281,6/9/2024,,,
+977,CN ,S3,49,29,0.0474,6/9/2024,,,
+978,CN ,S3,49,47,0.0232,6/9/2024,,soils collected,ARA
+979,CN ,S3,49,38,0.0206,6/9/2024,,,
+980,CN ,S3,49,33,0.0228,6/9/2024,,,
+989,CN ,S3,50,24,0.0274,6/10/2024,,soils collected,ARA
+990,CN ,S3,50,14,0.0333,6/10/2024,,soils collected,ARA
+991,CN ,S3,50,83,0.0561,6/10/2024,,,
+992,CN ,S3,50,25,0.0121,6/10/2024,,,
+1005,CN ,S3,51,37,0.0151,6/10/2024,,soils collected,ARA
+1006,CN ,S3,51,46,0.0085,6/10/2024,all nodules dead!,,
+1007,CN ,S3,51,60,0.0312,6/10/2024,,soils collected,ARA
+1008,CN ,S3,51,26,0.0361,6/10/2024,,,
+1017,CN ,S3,51,42,0.0373,6/11/2024,,soils collected,ARA
+1018,CN ,S3,51,44,0.0305,6/11/2024,,soils collected,ARA
+1019,CN ,S3,51,25,0.0145,6/10/2024,,,
+1020,CN ,S3,51,34,0.0535,6/11/2024,,soils collected,ARA
+1025,CN ,S3,52,48,0.0271,6/10/2024,,,
+1026,CN ,S3,52,31,0.0216,6/11/2024,,soils collected,ARA
+1027,CN ,S3,52,35,0.0134,6/10/2024,,,
+1028,CN ,S3,52,24,0.0194,6/11/2024,,soils collected,ARA
+1037,CN ,S3,52,27,0.0394,6/10/2024,,,
+1038,CN ,S3,52,36,0.0106,6/12/2024,,soils collected,ARA
+1039,CN ,S3,52,42,0.032,6/10/2024,,,
+1040,CN ,S3,52,27,0.013,6/12/2024,,soils collected,ARA
+1049,CN ,S3,53,28,0.0217,6/12/2024,,,
+1050,CN ,S3,53,41,0.0145,6/12/2024,,,
+1051,CN ,S3,53,22,0.0143,6/12/2024,,soils collected,ARA
+1052,CN ,S3,53,28,0.0243,6/12/2024,,soils collected,ARA
+1061,CN ,S3,54,16,0.0149,6/12/2024,,,
+1062,CN ,S3,54,26,0.0183,6/12/2024,,soils collected,ARA
+1063,CN ,S3,54,38,0.0285,6/12/2024,,,
+1064,CN ,S3,54,33,0.0107,6/12/2024,,soils collected,ARA
+1073,CN ,S3,54,30,0.0193,6/12/2024,all nodules dead!,,
+1074,CN ,S3,54,30,0.0206,6/12/2024,all nodules dead!,,
+1075,CN ,S3,54,30,0.0129,6/12/2024,,soils collected,ARA
+1076,CN ,S3,54,20,0.0044,6/12/2024,,,
+1085,CN ,S3,55,42,0.0214,6/12/2024,,soils collected,ARA
+1086,CN ,S3,55,34,0.0319,6/12/2024,,,
+1087,CN ,S3,55,32,0.0151,6/12/2024,,soils collected,ARA
+1088,CN ,S3,55,32,0.0376,6/12/2024,,,
+1097,CN ,S3,55,30,0.0261,6/12/2024,,,
+1098,CN ,S3,55,49,0.028,6/12/2024,,soils collected,ARA
+1099,CN ,S3,55,8,0.0051,6/12/2024,,,
+1100,CN ,S3,55,47,0.0228,6/12/2024,nodules look darker,soils collected,ARA
+1109,CN ,S3,56,30,0.0331,6/12/2024,,,
+1110,CN ,S3,56,28,0.023,6/13/2024,,soils collected,ARA
+1111,CN ,S3,56,16,0.0174,6/13/2024,,soils collected,ARA
+1112,CN ,S3,56,21,0.033,6/13/2024,,soils collected,ARA
+1121,CN ,S3,57,28,0.038,6/12/2024,,,
+1122,CN ,S3,57,31,0.0205,6/13/2024,,soils collected,ARA
+1123,CN ,S3,57,29,0.0359,6/12/2024,,,
+1124,CN ,S3,57,30,0.0281,6/13/2024,,soils collected,ARA
+1133,CN ,S3,57,43,0.0384,6/12/2024,,,
+1134,CN ,S3,57,16,0.0053,6/13/2024,,soils collected,ARA
+1135,CN ,S3,57,35,0.0453,6/12/2024,,,
+1136,CN ,S3,57,43,0.0378,6/13/2024,,soils collected,ARA
+1141,CN ,S3,58,31,0.0267,6/12/2024,,,
+1142,CN ,S3,58,39,0.0306,6/13/2024,,soils collected,ARA
+1143,CN ,S3,58,22,0.028,6/12/2024,,,
+1144,CN ,S3,58,22,0.0166,6/12/2024,,,
+1153,CN ,S3,58,50,0.0744,6/13/2024,,soils collected,ARA
+1154,CN ,S3,58,11,0.0646,6/12/2024,,,
+1155,CN ,S3,58,23,0.0529,6/12/2024,,,
+1156,CN ,S3,58,36,0.0147,6/13/2024,,soils collected,ARA
+1169,CN ,S3,59,55,0.0507,6/13/2024,,,
+1170,CN ,S3,59,62,0.0393,6/13/2024,,soils collected,ARA
+1171,CN ,S3,59,32,0.046,6/13/2024,,,
+1172,CN ,S3,59,24,0.0199,6/13/2024,,soils collected,ARA
+1181,CN ,S3,60,27,0.033,6/13/2024,,soils collected,ARA
+1182,CN ,S3,60,30,0.0336,6/13/2024,,,
+1183,CN ,S3,60,32,0.0274,6/13/2024,,soils collected,ARA
+1184,CN ,S3,60,15,0.0279,6/13/2024,1 nodule also dropped before weighing,,
+1193,CN ,S3,60,28,0.0397,6/13/2024,,soils collected,ARA
+1194,CN ,S3,60,33,0.0422,6/13/2024,,,
+1195,CN ,S3,60,61,0.0436,6/13/2024,,soils collected,ARA
+1196,CN ,S3,60,34,0.051,6/13/2024,,,
+5,LH,Control,1,0,0,7/21/2024,,,
+6,LH,Control,1,0,0,7/21/2024,,,
+7,LH,Control,1,0,0,7/21/2024,,soils collected,
+8,LH,Control,1,0,0,7/21/2024,,,
+17,LH,Control,1,0,0,7/21/2024,,,
+18,LH,Control,1,1,0.0008,7/21/2024,,soils collected,
+19,LH,Control,1,0,0,7/21/2024,,soils collected,
+20,LH,Control,1,0,0,7/21/2024,,,
+25,LH,Control,2,0,0,7/21/2024,,,
+26,LH,Control,2,0,0,7/21/2024,,soils collected,
+27,LH,Control,2,0,0,7/21/2024,,soils collected,
+28,LH,Control,2,0,0,7/21/2024,,,
+37,LH,Control,2,0,0,7/21/2024,,,
+38,LH,Control,2,0,0,7/21/2024,,soils collected,
+39,LH,Control,2,0,0,7/21/2024,,,
+40,LH,Control,2,0,0,7/21/2024,,,
+49,LH,Control,3,0,0,7/21/2024,,soils collected,
+50,LH,Control,3,0,0,7/21/2024,,,
+51,LH,Control,3,0,0,7/21/2024,,soils collected,
+52,LH,Control,3,0,0,7/21/2024,,soils collected,
+61,LH,Control,4,0,0,7/21/2024,,,
+62,LH,Control,4,0,0,7/21/2024,,,
+63,LH,Control,4,0,0,7/21/2024,,soils collected,
+64,LH,Control,4,0,0,7/21/2024,,,
+73,LH,Control,4,0,0,7/21/2024,,,
+74,LH,Control,4,0,0,7/21/2024,,soils collected,
+75,LH,Control,4,0,0,7/21/2024,,,
+76,LH,Control,4,0,0,7/21/2024,,soils collected,
+81,LH,Control,5,13,0.0068,7/21/2024,,soils collected,
+82,LH,Control,5,0,0,7/21/2024,,soils collected,
+83,LH,Control,5,5,0.0024,7/21/2024,,,
+84,LH,Control,5,0,0,7/21/2024,,soils collected,
+93,LH,Control,5,0,0,7/21/2024,,,
+94,LH,Control,5,13,0.0068,7/21/2024,,soils collected,
+95,LH,Control,5,0,0,7/21/2024,,,
+96,LH,Control,5,0,0,7/21/2024,,soils collected,
+109,LH,Control,6,4,0.0075,7/21/2024,,soils collected,
+110,LH,Control,6,5,0.0077,7/21/2024,,soils collected,
+111,LH,Control,6,0,0,7/21/2024,,soils collected,
+112,LH,Control,6,1,0.0062,7/21/2024,,,
+121,LH,Control,7,0,0,7/21/2024,,,
+122,LH,Control,7,0,0,7/21/2024,,soils collected,
+123,LH,Control,7,0,0,7/21/2024,,soils collected,
+124,LH,Control,7,9,0.0328,7/21/2024,,soils collected,
+133,LH,Control,7,0,0,7/22/2024,,,
+134,LH,Control,7,0,0,7/22/2024,,soils collected,
+135,LH,Control,7,0,0,7/22/2024,,soils collected,
+136,LH,Control,7,0,0,7/22/2024,,soils collected,
+145,LH,Control,8,0,0,7/23/2024,,,
+146,LH,Control,8,0,0,7/23/2024,,soils collected,
+147,LH,Control,8,0,0,7/23/2024,,,
+148,LH,Control,8,0,0,7/23/2024,,,
+157,LH,Control,8,0,0,7/23/2024,,soils collected,
+158,LH,Control,8,0,0,7/23/2024,,,
+159,LH,Control,8,0,0,7/23/2024,,soils collected,
+160,LH,Control,8,0,0,7/23/2024,,,
+169,LH,Control,9,6,0.0096,7/23/2024,,soils collected,ARA?
+170,LH,Control,9,0,0,7/23/2024,,soils collected,
+171,LH,Control,9,0,0,7/23/2024,,,
+172,LH,Control,9,0,0,7/23/2024,,soils collected,
+185,LH,Control,10,4,0.0064,7/23/2024,,,
+186,LH,Control,10,0,0,7/23/2024,,,
+187,LH,Control,10,0,0,7/23/2024,,soils collected,
+188,LH,Control,10,0,0,7/23/2024,,soils collected,
+197,LH,Control,10,0,0,7/23/2024,plant dead. Still had biomass,,
+198,LH,Control,10,0,0,7/23/2024,,soils collected,
+199,LH,Control,10,0,0,7/23/2024,,,
+200,LH,Control,10,0,0,7/23/2024,,soils collected,
+201,LH,Control,11,0,0,7/23/2024,,soils collected,
+202,LH,Control,11,0,0,7/23/2024,,,
+203,LH,Control,11,0,0,7/23/2024,,soils collected,
+204,LH,Control,11,6,0.0082,7/23/2024,,,
+213,LH,Control,11,0,0,7/23/2024,,soils collected,
+214,LH,Control,11,0,0,7/23/2024,,,
+215,LH,Control,11,0,0,7/23/2024,,,
+216,LH,Control,11,0,0,7/23/2024,,soils collected,
+229,LH,Control,12,0,0,7/23/2024,,,
+230,LH,Control,12,0,0,7/23/2024,,,
+231,LH,Control,12,0,0,7/23/2024,,soils collected,
+232,LH,Control,12,0,0,7/23/2024,,soils collected,
+241,LH,Control,13,0,0,7/23/2024,,,
+242,LH,Control,13,4,0.0076,7/23/2024,,,
+243,LH,Control,13,0,0,7/23/2024,,soils collected,
+244,LH,Control,13,0,0,7/23/2024,,soils collected,
+253,LH,Control,13,0,0,7/23/2024,,,
+254,LH,Control,13,0,0,7/23/2024,,soils collected,
+255,LH,Control,13,0,0,7/23/2024,,,
+256,LH,Control,13,14,0.0282,7/23/2024,,,
+265,LH,Control,14,0,0,7/23/2024,,soils collected,
+266,LH,Control,14,0,0,7/23/2024,,soils collected,
+267,LH,Control,14,0,0,7/23/2024,,,
+268,LH,Control,14,0,0,7/23/2024,,soils collected,
+277,LH,Control,14,0,0,7/23/2024,,soils collected,
+278,LH,Control,14,0,0,7/23/2024,,soils collected,
+279,LH,Control,14,18,0.0177,7/23/2024,,,
+280,LH,Control,14,0,0,7/23/2024,,soils collected,
+289,LH,Control,15,0,0,7/23/2024,,,
+290,LH,Control,15,0,0,7/23/2024,,,
+291,LH,Control,15,0,0,7/23/2024,,soils collected,
+292,LH,Control,15,0,0,7/23/2024,,,
+301,LH,S1,16,8,0.0088,7/19/2024,,soils collected,ARA
+302,LH,S1,16,12,0.0128,7/19/2024,,,
+303,LH,S1,16,8,0.0061,7/19/2024,,soils collected,ARA
+304,LH,S1,16,4,0.0029,7/19/2024,,,
+313,LH,S1,16,7,0.0064,7/19/2024,,soils collected,ARA
+314,LH,S1,16,13,0.0091,7/19/2024,,,
+315,LH,S1,16,4,0.0027,7/19/2024,,soils collected,ARA
+316,LH,S1,16,13,0.0031,7/19/2024,all nodules dead!,,
+325,LH,S1,17,22,0.0232,7/19/2024,,soils collected,ARA
+326,LH,S1,17,14,0.0362,7/19/2024,,,
+327,LH,S1,17,8,0.0122,7/19/2024,,,
+328,LH,S1,17,14,0.0333,7/19/2024,,soils collected,ARA
+337,LH,S1,17,8,0.0038,7/19/2024,,soils collected,ARA
+338,LH,S1,17,6,0.0062,7/19/2024,,,
+339,LH,S1,17,6,0.0095,7/19/2024,,soils collected,ARA
+340,LH,S1,17,5,0.0026,7/19/2024,,,
+349,LH,S1,18,13,0.0384,7/20/2024,,soils collected,ARA
+350,LH,S1,18,26,0.0608,7/20/2024,,soils collected,ARA
+351,LH,S1,18,15,0.0187,7/19/2024,,,
+352,LH,S1,18,28,0.0377,7/19/2024,,,
+361,LH,S1,19,16,0.0298,7/20/2024,,soils collected,ARA
+362,LH,S1,19,5,0.0202,7/20/2024,,,
+363,LH,S1,19,6,0.0035,7/20/2024,,soils collected,ARA
+364,LH,S1,19,7,0.0058,7/20/2024,,,
+373,LH,S1,19,8,0.0135,7/20/2024,,soils collected,ARA
+374,LH,S1,19,11,0.0086,7/20/2024,,,
+375,LH,S1,19,8,0.0036,7/20/2024,,,
+376,LH,S1,19,8,0.0055,7/20/2024,,soils collected,ARA
+385,LH,S1,20,8,0.0051,7/21/2024,,,
+386,LH,S1,20,29,0.0391,7/20/2024,,soils collected,ARA
+387,LH,S1,20,40,0.0476,7/21/2024,,,
+388,LH,S1,20,17,0.0275,7/20/2024,,soils collected,ARA
+397,LH,S1,20,15,0.0271,7/21/2024,,soils collected,ARA
+398,LH,S1,20,6,0.003,7/21/2024,,,
+399,LH,S1,20,14,0.0278,7/21/2024,,,
+400,LH,S1,20,17,0.0175,7/21/2024,,soils collected,ARA
+409,LH,S1,21,9,0.0206,7/21/2024,,soils collected,ARA
+410,LH,S1,21,15,0.0081,7/21/2024,,,
+411,LH,S1,21,8,0.0049,7/21/2024,,soils collected,ARA
+412,LH,S1,21,6,0.0042,7/21/2024,,,
+421,LH,S1,22,20,0.0258,7/21/2024,,soils collected,ARA
+422,LH,S1,22,13,0.0268,7/21/2024,,,
+423,LH,S1,22,8,0.023,7/21/2024,,,
+424,LH,S1,22,21,0.0342,7/21/2024,,soils collected,ARA
+433,LH,S1,22,11,0.0146,7/21/2024,,soils collected,ARA
+434,LH,S1,22,2,0.0049,7/21/2024,,,
+435,LH,S1,22,8,0.0124,7/21/2024,,soils collected,ARA
+436,LH,S1,22,7,0.0173,7/21/2024,,,
+445,LH,S1,23,10,0.0124,7/21/2024,,soils collected,ARA
+446,LH,S1,23,12,0.0167,7/21/2024,,,
+447,LH,S1,23,1,0.0024,7/21/2024,,soils collected,ARA
+448,LH,S1,23,6,0.023,7/21/2024,,,
+457,LH,S1,23,11,0.0092,7/21/2024,plant and nodules look dead,,
+458,LH,S1,23,7,0.0025,7/21/2024,nodules look dead,soils collected,ARA
+459,LH,S1,23,7,0.0047,7/21/2024,,,
+460,LH,S1,23,8,0.0093,7/21/2024,,,
+469,LH,S1,24,3,0.0037,7/22/2024,,soils collected,ARA
+470,LH,S1,24,5,0.0085,7/22/2024,,soils collected,ARA
+471,LH,S1,24,10,0.0109,7/21/2024,,,
+472,LH,S1,24,8,0.0095,7/22/2024,,soils collected,ARA
+481,LH,S1,25,33,0.0758,7/21/2024,,,
+482,LH,S1,25,15,0.02,7/22/2024,,soils collected,ARA
+483,LH,S1,25,37,0.0786,7/22/2024,,soils collected,ARA
+484,LH,S1,25,5,0.006,7/21/2024,,,
+493,LH,S1,25,10,0.029,7/21/2024,,,
+494,LH,S1,25,5,0.0087,7/22/2024,,soils collected,ARA
+495,LH,S1,25,2,0.0068,7/22/2024,,,
+496,LH,S1,25,14,0.0144,7/22/2024,,soils collected,ARA
+501,LH,S1,26,19,0.0191,7/22/2024,,soils collected,ARA
+502,LH,S1,26,16,0.0265,7/21/2024,,,
+503,LH,S1,26,13,0.0117,7/22/2024,,soils collected,ARA
+504,LH,S1,26,11,0.0098,7/21/2024,,,
+513,LH,S1,26,7,0.0119,7/22/2024,,soils collected,ARA
+514,LH,S1,26,11,0.0089,7/22/2024,,soils collected,ARA
+515,LH,S1,26,15,0.0244,7/22/2024,plant and nodules look dead,,
+516,LH,S1,26,10,0.0101,7/22/2024,plant mostly dead; darker nodules but they look okay?,,
+529,LH,S1,27,9,0.0108,7/22/2024,,soils collected,ARA
+530,LH,S1,27,11,0.0124,7/22/2024,,soils collected,ARA
+531,LH,S1,27,21,0.0436,7/22/2024,,,
+532,LH,S1,27,11,0.0142,7/22/2024,,,
+541,LH,S1,28,13,0.0112,7/23/2024,,soils collected,ARA
+542,LH,S1,28,7,0.0042,7/22/2024,,,
+543,LH,S1,28,11,0.0097,7/23/2024,,soils collected,ARA
+544,LH,S1,28,16,0.0142,7/22/2024,plant and nodules look dead,,
+553,LH,S1,28,10,0.0159,7/23/2024,,soils collected,
+554,LH,S1,28,8,0.0248,7/22/2024,,,
+555,LH,S1,28,22,0.0463,7/23/2024,,soils collected,
+556,LH,S1,28,4,0.0091,7/22/2024,,,
+565,LH,S1,29,23,0.0158,7/23/2024,,,
+566,LH,S1,29,11,0.0096,7/23/2024,,soils collected,
+567,LH,S1,29,9,0.0157,7/23/2024,,,
+568,LH,S1,29,13,0.0143,7/23/2024,,,
+577,LH,S1,29,23,0.0169,7/23/2024,,soils collected,
+578,LH,S1,29,10,0.0186,7/23/2024,,,
+579,LH,S1,29,14,0.0208,7/23/2024,,soils collected,
+580,LH,S1,29,14,0.018,7/23/2024,,,
+589,LH,S1,30,18,0.0248,7/23/2024,,soils collected,
+590,LH,S1,30,30,0.0418,7/23/2024,,soils collected,
+591,LH,S1,30,6,0.004,7/23/2024,,,
+592,LH,S1,30,9,0.0115,7/23/2024,,soils collected,
+601,LH,S2,31,1,0.0014,7/23/2024,,soils collected,
+675,LH,S2,34,3,0.0366,7/23/2024,,,
+818,LH,S2,41,0,0,7/23/2024,,,
+830,LH,S2,42,3,0.0037,7/23/2024,,,
+901,LH,S3,46,13,0.0051,7/20/2024,,soils collected,ARA
+902,LH,S3,46,9,0.0045,7/20/2024,plant and nodules look dead,,
+903,LH,S3,46,3,0.0011,7/20/2024,plant and nodules look dead,,
+904,LH,S3,46,10,0.0056,7/20/2024,plant and nodules look dead,,
+913,LH,S3,46,27,0.0529,7/20/2024,,soils collected,ARA
+914,LH,S3,46,15,0.0212,7/20/2024,,soils collected,ARA
+915,LH,S3,46,20,0.0309,7/20/2024,,,
+916,LH,S3,46,5,0.0065,7/20/2024,,soils collected,ARA
+925,LH,S3,47,7,0.0024,7/20/2024,plant and nodules look dead,,
+926,LH,S3,47,12,0.003,7/20/2024,nodules look dead,,
+927,LH,S3,47,11,0.0044,7/20/2024,,soils collected,ARA
+928,LH,S3,47,2,0.0009,7/20/2024,nodules look dead,,
+937,LH,S3,47,21,0.0325,7/20/2024,,soils collected,ARA
+938,LH,S3,47,5,0.0131,7/20/2024,,,
+939,LH,S3,47,8,0.0066,7/20/2024,,,
+940,LH,S3,47,11,0.0048,7/20/2024,,soils collected,ARA
+949,LH,S3,48,8,0.006,7/20/2024,,,
+950,LH,S3,48,15,0.0227,7/20/2024,,soils collected,ARA
+951,LH,S3,48,7,0.0065,7/20/2024,,soils collected,ARA
+952,LH,S3,48,19,0.0235,7/20/2024,,,
+961,LH,S3,49,6,0.0036,7/20/2024,nodules look almost dead,,
+962,LH,S3,49,DEAD,DEAD,7/20/2024,,,
+963,LH,S3,49,10,0.0033,7/20/2024,nodules look almost dead,,
+964,LH,S3,49,1,0.0005,7/20/2024,,,
+973,LH,S3,49,10,0.0105,7/20/2024,,soils collected,ARA
+974,LH,S3,49,10,0.011,7/20/2024,,soils collected,ARA
+975,LH,S3,49,8,0.014,7/22/2024,,,
+976,LH,S3,49,12,0.0204,7/21/2024,,soils collected,ARA
+981,LH,S3,50,9,0.0072,7/22/2024,,,
+982,LH,S3,50,9,0.0046,7/21/2024,nodules look dead,soils collected,ARA
+983,LH,S3,50,6,0.0066,7/22/2024,,,
+984,LH,S3,50,5,0.0053,7/21/2024,,soils collected,ARA
+993,LH,S3,50,7,0.008,7/22/2024,,,
+994,LH,S3,50,9,0.0053,7/21/2024,,soils collected,ARA
+995,LH,S3,50,12,0.0034,7/21/2024,nodules look dead,soils collected,ARA
+996,LH,S3,50,3,0.0039,7/22/2024,plant almost dead and nodules look dead,,
+1009,LH,S3,51,10,0.0065,7/21/2024,,soils collected,ARA
+1010,LH,S3,51,11,0.0103,7/22/2024,,,
+1011,LH,S3,51,2,0.0004,7/21/2024,has 2 dead nodules?,soils collected,ARA
+1012,LH,S3,51,6,0.0075,7/21/2024,,soils collected,ARA
+1021,LH,S3,52,15,0.0058,7/22/2024,,soils collected,ARA
+1022,LH,S3,52,10,0.0091,7/22/2024,,soils collected,ARA
+1023,LH,S3,52,29,0.0296,7/22/2024,,soils collected,ARA
+1024,LH,S3,52,5,0.0025,7/22/2024,,,
+1033,LH,S3,52,8,0.0023,7/22/2024,plant and nodules look dead (1 is alive),,
+1034,LH,S3,52,9,0.0014,7/22/2024,plant almost dead and nodules look dead,,
+1035,LH,S3,52,9,0.0014,7/22/2024,plant and nodules look dead,,
+1036,LH,S3,52,7,0.0011,7/22/2024,leaves fell off,,
+1045,LH,S3,53,7,0.0015,7/22/2024,nodules look dead,soils collected,ARA
+1046,LH,S3,53,6,0.0023,7/22/2024,,soils collected,ARA
+1047,LH,S3,53,16,0.026,7/22/2024,,soils collected,ARA
+1048,LH,S3,53,5,0.0029,7/22/2024,,soils collected,ARA
+1057,LH,S3,53,5,0.0007,7/22/2024,plant and nodules look dead,,
+1058,LH,S3,53,13,0.0014,7/22/2024,plant and nodules look dead,,
+1059,LH,S3,53,19,0.0026,7/22/2024,plant and nodules look dead,,
+1060,LH,S3,53,9,0.0001,7/22/2024,plant and nodules look dead,,
+1069,LH,S3,54,4,0.0052,7/22/2024,plant looks dead,,
+1070,LH,S3,54,4,0.002,7/22/2024,nodules look almost dead,soils collected,ARA
+1071,LH,S3,54,8,0.0053,7/22/2024,"leaves dead, stem green",,
+1072,LH,S3,54,12,0.01,7/22/2024,plant and nodules look dead,,
+1081,LH,S3,55,6,0.0013,7/22/2024,plant and nodules look dead,,
+1082,LH,S3,55,13,0.0125,7/22/2024,"plant looks dead, nodules look okay",,
+1083,LH,S3,55,67,0.0784,7/22/2024,,soils collected,ARA
+1084,LH,S3,55,54,0.0786,7/22/2024,,soils collected,ARA
+1093,LH,S3,55,11,0.0121,7/22/2024,,soils collected,ARA
+1094,LH,S3,55,3,0.0039,7/22/2024,,soils collected,ARA
+1095,LH,S3,55,5,0.0048,7/22/2024,,soils collected,ARA
+1096,LH,S3,55,7,0.0053,7/22/2024,,soils collected,ARA
+1105,LH,S3,56,5,0.003,7/23/2024,nodules darker but looked okay then look dead after incubation,soils collected,ARA
+1106,LH,S3,56,4,0.002,7/23/2024,nodules darker but looked okay then look dead after incubation,soils collected,ARA
+1107,LH,S3,56,3,0.0058,7/23/2024,nodules darker but looked okay then look dead after incubation,,
+1108,LH,S3,56,11,0.018,7/23/2024,,soils collected,ARA
+1117,LH,S3,56,6,0.001,7/23/2024,plant and nodules look dead,,
+1118,LH,S3,56,5,0.0007,7/23/2024,plant and nodules look dead,,
+1119,LH,S3,56,8,0.001,7/23/2024,plant and nodules look dead,,
+1120,LH,S3,56,8,0.0024,7/23/2024,plant and nodules look dead,,
+1129,LH,S3,57,7,0.0028,7/23/2024,,soils collected,ARA
+1130,LH,S3,57,4,0.0071,7/23/2024,,soils collected,ARA
+1131,LH,S3,57,7,0.0094,7/23/2024,,soils collected,ARA
+1132,LH,S3,57,14,0.0153,7/23/2024,plant and nodules look dead,,
+1145,LH,S3,58,9,0.0079,7/23/2024,,soils collected,ARA
+1146,LH,S3,58,18,0.0171,7/23/2024,,soils collected,ARA
+1147,LH,S3,58,16,0.032,7/23/2024,,soils collected,ARA
+1148,LH,S3,58,8,0.0058,7/23/2024,,,
+1157,LH,S3,58,7,0.0159,7/23/2024,,,
+1158,LH,S3,58,16,0.0107,7/23/2024,,soils collected,ARA
+1159,LH,S3,58,0,0,7/23/2024,,,
+1160,LH,S3,58,15,0.0072,7/23/2024,,soils collected,ARA
+1165,LH,S3,59,3,0.0077,7/23/2024,,soils collected,ARA
+1166,LH,S3,59,4,0.0077,7/23/2024,,soils collected,ARA
+1167,LH,S3,59,1,0.0018,7/23/2024,"PICTURE LABELLED AS ""168 LH""",soils collected,ARA
+1168,LH,S3,59,5,0.0047,7/23/2024,,,
+1177,LH,S3,59,5,0.0041,7/23/2024,,soils collected,ARA
+1178,LH,S3,59,6,0.0064,7/23/2024,,,
+1179,LH,S3,59,7,0.0065,7/23/2024,,,
+1180,LH,S3,59,4,0.0051,7/23/2024,,soils collected,ARA
+1189,LH,S3,60,5,0.0051,7/23/2024,,,
+1190,LH,S3,60,31,0.0474,7/23/2024,,,
+1191,LH,S3,60,3,0.004,7/23/2024,,soils collected,ARA
+1192,LH,S3,60,42,0.0471,7/23/2024,,soils collected,ARA
