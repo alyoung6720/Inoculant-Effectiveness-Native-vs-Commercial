@@ -805,7 +805,7 @@ res_EthPPM <- aov(log1p(AvgEthPPM) ~ Treatment*Species, data=AvgIndArea)
 resEthPPM <- residuals(res_EthPPM, type="pearson")
 plot(resEthPPM)
 shapiro.test(residuals(res_EthPPM))
-leveneTest(log1p(AvgEthPPM) ~ Treatment*Species, data = data2)
+leveneTest(log1p(AvgEthPPM) ~ Treatment*Species, data = AvgIndArea)
 
 
 summary(res_EthPPM)
@@ -821,11 +821,11 @@ ggplot(data = AvgIndArea,
   geom_jitter(width = 0.2, size = 10, alpha = 0.7) + # Raw points
   ylab("Ethylene Produced (ppm)") +
   xlab("Treatment Strain") +
-  annotate("text", x = 1, y = 15.00, label = "a", size = 25) +
-  annotate("text", x = 2, y = 160.00, label = "b", size = 25) +
-  annotate("text", x = 3, y = 95.00, label = "c", size = 25) +
+  annotate("text", x = 1, y = 15.00, label = "a", size = 30) +
+  annotate("text", x = 2, y = 160.00, label = "c", size = 30) +
+  annotate("text", x = 3, y = 95.00, label = "b", size = 30) +
   scale_color_manual(values = my_colors) +
-  scale_x_discrete(labels = c("Control", "Native", "Restoration")) +
+  scale_x_discrete(labels = c("Control", "Native", "Comemrcial")) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
