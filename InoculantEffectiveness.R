@@ -133,7 +133,8 @@ AvgIndArea <- data3 %>%
 # Summary Statistics #
 summary_table <- data2 %>%
   group_by(Treatment, Species) %>%
-  summarise(
+  summarise(mean_ANPP = mean(ANPP, na.rm = TRUE),mean_BNPP = mean(BNPP, na.rm = TRUE),
+            
     mean_ANPP = mean(ANPP, na.rm = TRUE),
     median_ANPP = median(ANPP, na.rm = TRUE),
     n_ANPP = sum(!is.na(ANPP)),
@@ -169,6 +170,14 @@ summary_table <- data2 %>%
     n_PercN = sum(!is.na(PercN)),
     se_PercN = sd(PercN, na.rm = TRUE) / sqrt(n_PercN)
   )
+
+summary_table2 <- AvgIndArea %>%
+  group_by(Treatment) %>%
+  summarise(
+    mean_PPM = mean(AvgEthPPM, na.rm = TRUE),
+    median_PPM = median(AvgEthPPM, na.rm = TRUE),
+    n_PPM = sum(!is.na(AvgEthPPM)),
+    se_PPM = sd(AvgEthPPM, na.rm = TRUE) / sqrt(n_PPM))
 ##############################################################################################
 # Define custom colors
 my_colors <- c("Control" = "#704020", "S1" = "#8B8C64", "S3" = "#d17200")
@@ -192,7 +201,7 @@ pairs(anpp_emm)
 hist(data2$BNPP)
 res_bnpp <- aov(log(BNPP) ~ Treatment*Species, data = data2)
 resbnpp <- residuals(res_bnpp, type="pearson")
-plot(resbnpp)
+plot(rsbnpp)
 shapiro.test(residuals(res_bnpp))
 leveneTest(log(BNPP) ~ Treatment*Species, data = data2)
 
@@ -363,9 +372,9 @@ ggplot(data = subset(data2, Species == "BA"),
   geom_jitter(width = 0.2, size = 10, alpha = 0.7) + # Raw points
   ylab("Root Biomass (g)") +
   xlab("Treatment Strain") + 
-  annotate("text", x = 1, y = 1.210, label = "a", size = 30) +
-  annotate("text", x = 2, y = 1.250, label = "c", size = 30) +
-  annotate("text", x = 3, y = 0.550, label = "b", size = 30) +
+  annotate("text", x = 1, y = 1.210, label = "c", size = 30) +
+  annotate("text", x = 2, y = 1.250, label = "b", size = 30) +
+  annotate("text", x = 3, y = 0.550, label = "a", size = 30) +
   ylim(0,1.25) + 
   scale_color_manual(values = my_colors) +
   scale_x_discrete(labels = c("Control", "Native", "Commercial")) +
