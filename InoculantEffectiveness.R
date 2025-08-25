@@ -59,6 +59,8 @@ Nodules <- read.csv("GreenhouseNoduleData_Su2024.csv") %>%
   mutate(NoduleNumber = as.numeric(NoduleNumber)) %>%
   mutate(TotalNoduleWeight = as.numeric(TotalNoduleWeight))
 
+# How many control individuals had nodules? #
+nrow(subset(Nodules, Treatment == "Control" & NoduleNumber > 0)) # 10%
 
 # Read in ANPP data #
 Biomass <- read.csv("Greenhouse_LegumeBiomass_Fall2024.csv")
