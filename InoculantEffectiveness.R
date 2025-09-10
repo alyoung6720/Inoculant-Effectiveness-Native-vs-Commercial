@@ -62,6 +62,18 @@ Nodules <- read.csv("GreenhouseNoduleData_Su2024.csv") %>%
 # How many control individuals had nodules? #
 nrow(subset(Nodules, Treatment == "Control" & NoduleNumber > 0)) # 10%
 
+
+# Read in weekly CN flowering data $
+Flowers<- read.csv("JennaStone_WeeklyGrowthData.csv") %>%
+  select(Week, Treatment, individual, leaves, Flower) %>%
+  filter(Treatment!="S2")
+
+# In final week, which treatment had more flowers and seeds? 
+Flowers2 <- Flowers %>%
+  filter(Week == 8) %>%
+  mutate(Flower = ifelse(is.na(Flower), 0, Flower))
+
+
 # Read in ANPP data #
 Biomass <- read.csv("Greenhouse_LegumeBiomass_Fall2024.csv")
 
@@ -70,7 +82,7 @@ data<- merge(Nodules, Biomass, by=c("Species", "Treatment", "Individual"), all=T
 
 
 # visualizing outliers #
-ggplot(data=data2, aes(x=Treatment, y=ANPP))+
+ggplot(data=data, aes(x=Treatment, y=ANPP))+
   geom_boxplot(outlier.color = "red", outlier.shape = 16, outlier.size = 3) +
   facet_wrap(~Species)
 ggplot(data=data2, aes(x=Treatment, y=BNPP))+
@@ -180,6 +192,14 @@ summary_table2 <- AvgIndArea %>%
     median_PPM = median(AvgEthPPM, na.rm = TRUE),
     n_PPM = sum(!is.na(AvgEthPPM)),
     se_PPM = sd(AvgEthPPM, na.rm = TRUE) / sqrt(n_PPM))
+
+summary_table3 <- Flowers2 %>%
+  group_by(Treatment) %>%
+  summarise(
+    mean_flower = mean(Flower, na.rm = TRUE),
+    median_flower = median(Flower, na.rm = TRUE),
+    n_flower = sum(!is.na(Flower)),
+    se_flower = sd(Flower, na.rm = TRUE) / sqrt(n_flower))
 ##############################################################################################
 # Define custom colors
 my_colors <- c("Control" = "#704020", "S1" = "#8B8C64", "S3" = "#d17200")
@@ -285,6 +305,41 @@ PercN_emm <- emmeans(res_PercN, ~ Treatment|Species, adjust="BH")
 pairs(PercN_emm)
 
 
+########################################################################################
+hist(Flowers2$Flower)
+res_flower <- aov(log1p(Flower) ~ Treatment, data = Flowers2)
+resflower <- residuals(res_flower, type="pearson")
+plot(resflower)
+shapiro.test(residuals(res_flower))
+leveneTest(Flower ~ Treatment, data = Flowers2)
+
+summary(res_flower)
+flower_emm <- emmeans(res_flower, ~ Treatment, adjust="BH") 
+pairs(flower_emm)
+
+
+ggplot(data = Flowers2, 
+       aes(x = Treatment, y = Flower, color = Treatment)) +
+  geom_boxplot(aes(group = Treatment), fill = NA, outlier.shape = NA, size = 6) +  # Boxplot outline only
+  stat_summary(fun = mean, aes(group = Treatment), geom = "crossbar", width = 0.75, # Match the boxplot width
+               color = "black", size = 1) +
+  geom_jitter(width = 0.2, size = 10, alpha = 0.7) + # Raw points
+  ylab("Flower Number") +
+  xlab("Treatment Strain")+
+  annotate("text", x = 1, y = 1, label = "a", size = 30) +
+  annotate("text", x = 2, y = 3.75, label = "b", size = 30) +
+  annotate("text", x = 3, y = 2.75, label = "b", size = 30) +
+  scale_color_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native", "Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
 
 
 
