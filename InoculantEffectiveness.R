@@ -147,9 +147,7 @@ AvgIndArea <- data3 %>%
 # Summary Statistics #
 summary_table <- data2 %>%
   group_by(Treatment, Species) %>%
-  summarise(mean_ANPP = mean(ANPP, na.rm = TRUE),mean_BNPP = mean(BNPP, na.rm = TRUE),
-            
-    mean_ANPP = mean(ANPP, na.rm = TRUE),
+  summarise(mean_ANPP = mean(ANPP, na.rm = TRUE),
     median_ANPP = median(ANPP, na.rm = TRUE),
     n_ANPP = sum(!is.na(ANPP)),
     se_ANPP = sd(ANPP, na.rm = TRUE) / sqrt(n_ANPP),
@@ -185,6 +183,41 @@ summary_table <- data2 %>%
     se_PercN = sd(PercN, na.rm = TRUE) / sqrt(n_PercN)
   )
 
+
+
+
+
+# Step 1: Summarize to get one value per species-treatment-variable
+summary_means <- summary_table %>%
+  group_by(Species, Treatment) %>%
+  summarise(across(starts_with("mean"), mean, na.rm = TRUE), .groups = "drop")
+
+# Step 2: Pivot longer so that variable names are in one column
+summary_long <- summary_means %>%
+  pivot_longer(
+    cols = starts_with("mean"),
+    names_to = "Variable",
+    values_to = "Value"
+  )
+
+# Step 3: Pivot wider so that treatments are columns
+summary_wide <- summary_long %>%
+  pivot_wider(
+    names_from = Treatment,
+    values_from = Value
+  )
+
+# Step 4: Calculate percent changes (column by column)
+PercChange <- summary_wide %>%
+  mutate(
+    S1_vs_S3 = (S1 - S3) / S3 * 100,
+    S3_vs_Control = (S3 - Control) / Control * 100,
+    S1_vs_Control = (S1 - Control) / Control * 100
+  )
+
+
+
+
 summary_table2 <- AvgIndArea %>%
   group_by(Treatment) %>%
   summarise(
@@ -192,6 +225,22 @@ summary_table2 <- AvgIndArea %>%
     median_PPM = median(AvgEthPPM, na.rm = TRUE),
     n_PPM = sum(!is.na(AvgEthPPM)),
     se_PPM = sd(AvgEthPPM, na.rm = TRUE) / sqrt(n_PPM))
+
+# Step 1: Pivot wider so treatments are columns
+summary_wide <- summary_table2 %>%
+  select(Treatment, mean_PPM) %>%
+  pivot_wider(names_from = Treatment, values_from = mean_PPM)
+
+# Step 2: Calculate percent change
+PercChange <- summary_wide %>%
+  mutate(
+    S1_vs_S3 = (S1 - S3) / S3 * 100,
+    S3_vs_Control = (S3 - Control) / Control * 100,
+    S1_vs_Control = (S1 - Control) / Control * 100
+  )
+
+
+
 
 summary_table3 <- Flowers2 %>%
   group_by(Treatment) %>%
