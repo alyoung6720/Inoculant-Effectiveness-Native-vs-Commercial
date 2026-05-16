@@ -12,6 +12,7 @@ library(DHARMa)
 library(olsrr)
 library(car)
 library(MuMIn)
+library(dplyr)
 
 
 # Read in Nodule number and weight data #
@@ -75,7 +76,8 @@ Flowers2 <- Flowers %>%
 
 
 # Read in ANPP data #
-Biomass <- read.csv("Greenhouse_LegumeBiomass_Fall2024.csv")
+Biomass <- read.csv("Greenhouse_LegumeBiomass_Fall2024.csv")%>%
+  dplyr::select(-Notes)
 
 data<- merge(Nodules, Biomass, by=c("Species", "Treatment", "Individual"), all=T) %>%
   mutate(TotalNoduleWeight = ifelse(NoduleNumber==0, NA, TotalNoduleWeight))
@@ -124,7 +126,9 @@ data2 <- merge (data1, LeafN, by=c("Individual"), all=T)%>%
            Individual!=164 & Individual!=181 & Individual!=156 & Individual!=125 & Individual!=1167)
 
 data2$Soil_NO3 <- as.numeric(data2$Soil_NO3)
-
+data2$ANPP <- as.numeric(data2$ANPP)
+data2$BNPP <- as.numeric(data2$BNPP)
+data2$ANPP_BNPP_ratio <- data2$ANPP / data2$BNPP
 
 # Read in GCLog #
 EthAreaHeight <- read.csv("Greenhouse_GClog.csv")
@@ -189,7 +193,7 @@ summary_table <- data2 %>%
 
 # Step 1: Summarize to get one value per species-treatment-variable
 summary_means <- summary_table %>%
-  group_by(Species, Treatment) %>%
+  group_by(Treatment) %>%
   summarise(across(starts_with("mean"), mean, na.rm = TRUE), .groups = "drop")
 
 # Step 2: Pivot longer so that variable names are in one column
@@ -280,9 +284,17 @@ summary(res_bnpp)
 bnpp_emm <- emmeans(res_bnpp, ~ Treatment|Species, adjust="BH") 
 pairs(bnpp_emm)
 
+################################################################################################
+hist(data2$ANPP_BNPP_ratio)
+res_ratio <- aov(log(ANPP_BNPP_ratio) ~ Treatment*Species, data = data2)
+resratio <- residuals(res_ratio)
+plot(resratio)
+shapiro.test(residuals(res_ratio))
+leveneTest(log(ANPP_BNPP_ratio) ~ Treatment*Species, data = data2)
 
-
-
+summary(res_ratio)
+ratio_emm <- emmeans(res_ratio, ~ Treatment|Species, adjust="BH") 
+pairs(ratio_emm)
 
 ########################################################################################################################
 hist(data2$NoduleNumber)
@@ -355,8 +367,17 @@ pairs(PercN_emm)
 
 
 ########################################################################################
-hist(Flowers2$Flower)
-res_flower <- aov(log1p(Flower) ~ Treatment, data = Flowers2)
+# probability of flowering - did they flower? #
+Flowers2$flowered <- ifelse(Flowers2$Flower > 0, 1, 0)
+glm(flowered ~ Treatment, family = binomial, data = Flowers2)
+table(Flowers2$Treatment, Flowers2$flowered)
+fisher.test(table(Flowers2$Treatment, Flowers2$flowered))
+
+# intensity of flowering - if flowers, how many? #
+Flowers3 <- Flowers2 %>%
+  filter(flowered==1)
+hist(Flowers3$Flower)
+res_flower <- aov(log(Flower) ~ Treatment, data = Flowers3)
 resflower <- residuals(res_flower, type="pearson")
 plot(resflower)
 shapiro.test(residuals(res_flower))
@@ -367,7 +388,7 @@ flower_emm <- emmeans(res_flower, ~ Treatment, adjust="BH")
 pairs(flower_emm)
 
 
-ggplot(data = Flowers2, 
+ggplot(data = Flowers3, 
        aes(x = Treatment, y = Flower, color = Treatment)) +
   geom_boxplot(aes(group = Treatment), fill = NA, outlier.shape = NA, size = 6) +  # Boxplot outline only
   stat_summary(fun = mean, aes(group = Treatment), geom = "crossbar", width = 0.75, # Match the boxplot width
@@ -375,11 +396,10 @@ ggplot(data = Flowers2,
   geom_jitter(width = 0.2, size = 10, alpha = 0.7) + # Raw points
   ylab("Flower Number") +
   xlab("Treatment Strain")+
-  annotate("text", x = 1, y = 1, label = "a", size = 30) +
-  annotate("text", x = 2, y = 3.75, label = "b", size = 30) +
-  annotate("text", x = 3, y = 2.75, label = "b", size = 30) +
+  annotate("text", x = 1, y = 3.75, label = "b", size = 30) +
+  annotate("text", x = 2, y = 2.75, label = "b", size = 30) +
   scale_color_manual(values = my_colors) +
-  scale_x_discrete(labels = c("Control", "Native", "Commercial")) +
+  scale_x_discrete(labels = c("Native", "Commercial")) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
@@ -390,13 +410,35 @@ ggplot(data = Flowers2,
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
 
+ggplot(data = Flowers3, aes(x = Treatment, y = Flower, color = Treatment)) +
+  geom_boxplot(fill = NA, outlier.shape = NA, size = 1) +
+  geom_jitter(width = 0.15, height = 0, size = 3, alpha = 0.7) +
+  ylab("Flower Number") +
+  xlab("Treatment Strain") +
+  scale_color_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Native", "Commercial")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        legend.position = "none")
 
+ggplot(data = Flowers3, aes(x = Treatment, y = Flower, color = Treatment)) +
+  geom_violin(trim = FALSE, fill = NA) +
+  geom_jitter(width = 0.15, height = 0, size = 3, alpha = 0.7) +
+  stat_summary(fun = mean, geom = "point", size = 3) +
+  ylab("Flower Number") +
+  xlab("Treatment Strain") +
+  scale_color_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Native", "Commercial")) +
+  theme(panel.grid = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        legend.position = "none")
 
 
 ############### BOXPLOTS ########################################################################
 
 #save all as 1600x1600
-
 
 ggplot(data = subset(data2, Species == "BA"), 
        aes(x = Treatment, y = ANPP, color = Treatment)) +
