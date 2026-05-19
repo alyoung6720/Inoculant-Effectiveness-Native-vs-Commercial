@@ -411,11 +411,11 @@ ggplot(data = Flowers3,
 # violin #
 ggplot(data = Flowers3, 
        aes(x = Treatment, y = Flower, fill = Treatment)) +
-  geom_violin(trim = FALSE, alpha = 0.8) +
-  geom_jitter(width = 0.2, size = 15, alpha = 0.8) + # Raw points
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
   ylab("Flower Number") +
   xlab("Treatment Strain")+
-  stat_summary(fun = mean, geom = "point", shape = 23, size = 18, fill = "white") + # mean
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 8, fill = "black") + # mean
   scale_fill_manual(values = my_colors) +
   scale_x_discrete(labels = c("Native", "Commercial")) +
   theme(panel.grid.major = element_blank(),
@@ -427,6 +427,7 @@ ggplot(data = Flowers3,
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+
 
 
 
