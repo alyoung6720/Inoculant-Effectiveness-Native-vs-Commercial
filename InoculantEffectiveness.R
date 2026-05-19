@@ -152,37 +152,34 @@ AvgIndArea <- data3 %>%
 summary_table <- data2 %>%
   group_by(Treatment, Species) %>%
   summarise(mean_ANPP = mean(ANPP, na.rm = TRUE),
-    median_ANPP = median(ANPP, na.rm = TRUE),
     n_ANPP = sum(!is.na(ANPP)),
     se_ANPP = sd(ANPP, na.rm = TRUE) / sqrt(n_ANPP),
     
     mean_BNPP = mean(BNPP, na.rm = TRUE),
-    median_BNPP = median(BNPP, na.rm = TRUE),
     n_BNPP = sum(!is.na(BNPP)),
     se_BNPP = sd(BNPP, na.rm = TRUE) / sqrt(n_BNPP),
     
+    mean_ratio = mean(ANPP_BNPP_ratio, na.rm = TRUE),
+    n_ratio = sum(!is.na(ANPP_BNPP_ratio)),
+    se_ratio = sd(ANPP_BNPP_ratio, na.rm = TRUE) / sqrt(n_ratio),
+    
     mean_NoduleNumber = mean(NoduleNumber, na.rm = TRUE),
-    median_NoduleNumber = median(NoduleNumber, na.rm = TRUE),
     n_NoduleNumber = sum(!is.na(NoduleNumber)),
     se_NoduleNumber = sd(NoduleNumber, na.rm = TRUE) / sqrt(n_NoduleNumber),
     
     mean_TotalNoduleWeight = mean(TotalNoduleWeight, na.rm = TRUE),
-    median_TotalNoduleWeight = median(TotalNoduleWeight, na.rm = TRUE),
     n_TotalNoduleWeight = sum(!is.na(TotalNoduleWeight)),
     se_TotalNoduleWeight = sd(TotalNoduleWeight, na.rm = TRUE) / sqrt(n_TotalNoduleWeight),
     
     mean_Soil_NO3 = mean(Soil_NO3, na.rm = TRUE),
-    median_Soil_NO3 = median(Soil_NO3, na.rm = TRUE),
     n_Soil_NO3 = sum(!is.na(Soil_NO3)),
     se_Soil_NO3 = sd(Soil_NO3, na.rm = TRUE) / sqrt(n_Soil_NO3),
     
     mean_Soil_NH4 = mean(Soil_NH4, na.rm = TRUE),
-    median_Soil_NH4 = median(Soil_NH4, na.rm = TRUE),
     n_Soil_NH4 = sum(!is.na(Soil_NH4)),
     se_Soil_NH4 = sd(Soil_NH4, na.rm = TRUE) / sqrt(n_Soil_NH4),
     
     mean_PercN = mean(PercN, na.rm = TRUE),
-    median_PercN = median(PercN, na.rm = TRUE),
     n_PercN = sum(!is.na(PercN)),
     se_PercN = sd(PercN, na.rm = TRUE) / sqrt(n_PercN)
   )
@@ -193,7 +190,7 @@ summary_table <- data2 %>%
 
 # Step 1: Summarize to get one value per species-treatment-variable
 summary_means <- summary_table %>%
-  group_by(Treatment) %>%
+  group_by(Treatment, Species) %>%
   summarise(across(starts_with("mean"), mean, na.rm = TRUE), .groups = "drop")
 
 # Step 2: Pivot longer so that variable names are in one column
@@ -246,7 +243,7 @@ PercChange <- summary_wide %>%
 
 
 
-summary_table3 <- Flowers2 %>%
+summary_table3 <- Flowers3 %>%
   group_by(Treatment) %>%
   summarise(
     mean_flower = mean(Flower, na.rm = TRUE),
@@ -254,9 +251,6 @@ summary_table3 <- Flowers2 %>%
     n_flower = sum(!is.na(Flower)),
     se_flower = sd(Flower, na.rm = TRUE) / sqrt(n_flower))
 ##############################################################################################
-# Define custom colors
-my_colors <- c("Control" = "#704020", "S1" = "#8B8C64", "S3" = "#d17200")
-
 
 # Analyses #
 
@@ -387,7 +381,11 @@ summary(res_flower)
 flower_emm <- emmeans(res_flower, ~ Treatment, adjust="BH") 
 pairs(flower_emm)
 
+# Define custom colors
+my_colors <- c("Control" = "#704020", "S1" = "#8B8C64", "S3" = "#d17200")
 
+
+# boxplot #
 ggplot(data = Flowers3, 
        aes(x = Treatment, y = Flower, color = Treatment)) +
   geom_boxplot(aes(group = Treatment), fill = NA, outlier.shape = NA, size = 6) +  # Boxplot outline only
@@ -410,35 +408,31 @@ ggplot(data = Flowers3,
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
 
-ggplot(data = Flowers3, aes(x = Treatment, y = Flower, color = Treatment)) +
-  geom_boxplot(fill = NA, outlier.shape = NA, size = 1) +
-  geom_jitter(width = 0.15, height = 0, size = 3, alpha = 0.7) +
+# violin #
+ggplot(data = Flowers3, 
+       aes(x = Treatment, y = Flower, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.8) +
+  geom_jitter(width = 0.2, size = 15, alpha = 0.8) + # Raw points
   ylab("Flower Number") +
-  xlab("Treatment Strain") +
-  scale_color_manual(values = my_colors) +
+  xlab("Treatment Strain")+
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 18, fill = "white") + # mean
+  scale_fill_manual(values = my_colors) +
   scale_x_discrete(labels = c("Native", "Commercial")) +
-  theme(panel.grid = element_blank(),
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
         panel.background = element_blank(),
         axis.line = element_line(colour = "black"),
-        legend.position = "none")
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
 
-ggplot(data = Flowers3, aes(x = Treatment, y = Flower, color = Treatment)) +
-  geom_violin(trim = FALSE, fill = NA) +
-  geom_jitter(width = 0.15, height = 0, size = 3, alpha = 0.7) +
-  stat_summary(fun = mean, geom = "point", size = 3) +
-  ylab("Flower Number") +
-  xlab("Treatment Strain") +
-  scale_color_manual(values = my_colors) +
-  scale_x_discrete(labels = c("Native", "Commercial")) +
-  theme(panel.grid = element_blank(),
-        panel.background = element_blank(),
-        axis.line = element_line(colour = "black"),
-        legend.position = "none")
 
 
 ############### BOXPLOTS ########################################################################
 
-#save all as 1600x1600
+#save all as 1800x1600
 
 ggplot(data = subset(data2, Species == "BA"), 
        aes(x = Treatment, y = ANPP, color = Treatment)) +
@@ -462,6 +456,29 @@ ggplot(data = subset(data2, Species == "BA"),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "BA"), 
+       aes(x = Treatment, y = ANPP, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Shoot Biomass (g)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 0.175, label = "a", size = 25) +
+  annotate("text", x = 2, y = 0.4, label = "c", size = 25) +
+  annotate("text", x = 3, y = 0.275, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "CN "), 
        aes(x = Treatment, y = ANPP, color = Treatment)) +
@@ -485,6 +502,29 @@ ggplot(data = subset(data2, Species == "CN "),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "CN "), 
+       aes(x = Treatment, y = ANPP, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Shoot Biomass (g)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 0.085, label = "a", size = 25) +
+  annotate("text", x = 2, y = 0.27, label = "b", size = 25) +
+  annotate("text", x = 3, y = 0.3, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "LH"), 
        aes(x = Treatment, y = ANPP, color = Treatment)) +
@@ -499,6 +539,28 @@ ggplot(data = subset(data2, Species == "LH"),
   annotate("text", x = 3, y = 0.375, label = "b", size = 30) +
   scale_color_manual(values = my_colors) +
   scale_x_discrete(labels = c("Control", "Native", "Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "LH"), 
+       aes(x = Treatment, y = ANPP, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Shoot Biomass (g)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 0.17, label = "a", size = 25) +
+  annotate("text", x = 2, y = 0.385, label = "b", size = 25) +
+  annotate("text", x = 3, y = 0.415, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
@@ -535,6 +597,30 @@ ggplot(data = subset(data2, Species == "BA"),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "BA"), 
+       aes(x = Treatment, y = BNPP, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Root Biomass (g)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 1.25, label = "c", size = 25) +
+  annotate("text", x = 2, y = 1.250, label = "b", size = 25) +
+  annotate("text", x = 3, y = 0.5, label = "a", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  ylim(0.0, 1.25) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "CN "), 
        aes(x = Treatment, y = BNPP, color = Treatment)) +
@@ -558,6 +644,29 @@ ggplot(data = subset(data2, Species == "CN "),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "CN "), 
+       aes(x = Treatment, y = BNPP, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Root Biomass (g)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 0.3, label = "a", size = 25) +
+  annotate("text", x = 2, y = 0.4, label = "b", size = 25) +
+  annotate("text", x = 3, y = 0.65, label = "c", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "LH"), 
        aes(x = Treatment, y = BNPP, color = Treatment)) +
@@ -581,7 +690,28 @@ ggplot(data = subset(data2, Species == "LH"),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
-
+# violin #
+ggplot(data = subset(data2, Species == "LH"), 
+       aes(x = Treatment, y = BNPP, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Root Biomass (g)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 0.175, label = "a", size = 25) +
+  annotate("text", x = 2, y = 0.3, label = "c", size = 25) +
+  annotate("text", x = 3, y = 0.35, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
 
 
 
@@ -609,6 +739,30 @@ ggplot(data = subset(data2, Species == "BA"),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "BA"), 
+       aes(x = Treatment, y = NoduleNumber, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Nodule Number") +
+  xlab("Treatment Strain") +
+  ylim(0,48) + 
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 20, label = "a", size = 25) +
+  annotate("text", x = 2, y = 48, label = "b", size = 25) +
+  annotate("text", x = 3, y = 43, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "CN "), 
        aes(x = Treatment, y = NoduleNumber, color = Treatment)) +
@@ -632,6 +786,29 @@ ggplot(data = subset(data2, Species == "CN "),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "CN "), 
+       aes(x = Treatment, y = NoduleNumber, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Nodule Number") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 26, label = "a", size = 25) +
+  annotate("text", x = 2, y = 105, label = "c", size = 25) +
+  annotate("text", x = 3, y = 83, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "LH"), 
        aes(x = Treatment, y = NoduleNumber, color = Treatment)) +
@@ -655,7 +832,29 @@ ggplot(data = subset(data2, Species == "LH"),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
-
+# violin #
+ggplot(data = subset(data2, Species == "LH"), 
+       aes(x = Treatment, y = NoduleNumber, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Nodule Number") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 27, label = "a", size = 25) +
+  annotate("text", x = 2, y = 52, label = "c", size = 25) +
+  annotate("text", x = 3, y = 55, label = "b", size = 25) +
+  coord_cartesian(ylim = c(0,60)) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
 
 
 
@@ -682,6 +881,31 @@ ggplot(data = subset(data2, Species == "BA"),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "BA"), 
+       aes(x = Treatment, y = TotalNoduleWeight, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Nodule Biomass (g)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 0.06, label = "b", size = 25) +
+  annotate("text", x = 2, y = 0.09, label = "b", size = 25) +
+  annotate("text", x = 3, y = 0.045, label = "a", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_y_continuous(labels = scales::label_number(accuracy = 0.01)) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
+
 
 ggplot(data = subset(data2, Species == "CN "), 
        aes(x = Treatment, y = TotalNoduleWeight, color = Treatment)) +
@@ -706,6 +930,30 @@ ggplot(data = subset(data2, Species == "CN "),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "CN "), 
+       aes(x = Treatment, y = TotalNoduleWeight, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Nodule Biomass (g)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 0.03, label = "a", size = 25) +
+  annotate("text", x = 2, y = 0.10, label = "b", size = 25) +
+  annotate("text", x = 3, y = 0.10, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_y_continuous(labels = scales::label_number(accuracy = 0.01)) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
                             
 ggplot(data = subset(data2, Species == "LH"), 
        aes(x = Treatment, y = TotalNoduleWeight, color = Treatment)) +
@@ -729,7 +977,29 @@ ggplot(data = subset(data2, Species == "LH"),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
-
+# violin #
+ggplot(data = subset(data2, Species == "LH"), 
+       aes(x = Treatment, y = TotalNoduleWeight, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  ylab("Nodule Biomass (g)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 0.03, label = "a", size = 25) +
+  annotate("text", x = 2, y = 0.07, label = "c", size = 25) +
+  annotate("text", x = 3, y = 0.073, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_y_continuous(labels = scales::label_number(accuracy = 0.01)) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
 
 
 ggplot(data = subset(data2, Species == "BA" & !is.na(Soil_NO3)), 
@@ -755,6 +1025,32 @@ ggplot(data = subset(data2, Species == "BA" & !is.na(Soil_NO3)),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "BA" & !is.na(Soil_NO3)), 
+       aes(x = Treatment, y = Soil_NO3, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Soil Nitrate (ppm)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 1.00, label = "a", size = 25) +
+  annotate("text", x = 2, y = 1.10, label = "b", size = 25) +
+  annotate("text", x = 3, y = 1.14, label = "b", size = 25) +
+  coord_cartesian(ylim = c(0,1.25)) +
+  scale_fill_manual(values = my_colors) +
+  scale_y_continuous(labels = scales::label_number(accuracy = 0.01)) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "CN " & !is.na(Soil_NO3)), 
        aes(x = Treatment, y = Soil_NO3, color = Treatment)) +
@@ -778,6 +1074,32 @@ ggplot(data = subset(data2, Species == "CN " & !is.na(Soil_NO3)),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "CN " & !is.na(Soil_NO3)), 
+       aes(x = Treatment, y = Soil_NO3, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Soil Nitrate (ppm)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 0.7, label = "a", size = 25) +
+  annotate("text", x = 2, y = 1.15, label = "b", size = 25) +
+  annotate("text", x = 3, y = 1.05, label = "b", size = 25) +
+  coord_cartesian(ylim = c(0,1.25)) +
+  scale_fill_manual(values = my_colors) +
+  scale_y_continuous(labels = scales::label_number(accuracy = 0.01)) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "LH" & !is.na(Soil_NO3)), 
        aes(x = Treatment, y = Soil_NO3, color = Treatment)) +
@@ -793,6 +1115,31 @@ ggplot(data = subset(data2, Species == "LH" & !is.na(Soil_NO3)),
   annotate("text", x = 3, y = 1.25, label = "b", size = 30) +
   scale_color_manual(values = my_colors) +
   scale_x_discrete(labels = c("Control", "Native", "Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "LH" & !is.na(Soil_NO3)), 
+       aes(x = Treatment, y = Soil_NO3, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Soil Nitrate (ppm)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 1.15, label = "a", size = 25) +
+  annotate("text", x = 2, y = 1.15, label = "b", size = 25) +
+  annotate("text", x = 3, y = 1.25, label = "b", size = 25) +
+  coord_cartesian(ylim = c(0,1.25)) +
+  scale_fill_manual(values = my_colors) +
+  scale_y_continuous(labels = scales::label_number(accuracy = 0.01)) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
@@ -827,6 +1174,34 @@ ggplot(data = subset(data2, Species == "BA" & !is.na(Soil_NH4)),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "BA" & !is.na(Soil_NH4)), 
+       aes(x = Treatment, y = Soil_NH4, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Soil Ammonium (ppm)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 3.7, label = "a", size = 25) +
+  annotate("text", x = 2, y = 4.40, label = "b", size = 25) +
+  annotate("text", x = 3, y = 5.6, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_y_continuous(
+    breaks = 0:5,
+    labels = scales::label_number(accuracy = 0.1)) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  coord_cartesian(ylim = c(0,6)) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "CN " & !is.na(Soil_NH4)), 
        aes(x = Treatment, y = Soil_NH4, color = Treatment)) +
@@ -850,6 +1225,32 @@ ggplot(data = subset(data2, Species == "CN " & !is.na(Soil_NH4)),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "CN " & !is.na(Soil_NH4)), 
+       aes(x = Treatment, y = Soil_NH4, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Soil Ammonium (ppm)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 5.25, label = "a", size = 25) +
+  annotate("text", x = 2, y = 4.65, label = "a", size = 25) +
+  annotate("text", x = 3, y = 4.77, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_y_continuous(labels = scales::label_number(accuracy = 0.1)) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  coord_cartesian(ylim = c(0,6)) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "LH" & !is.na(Soil_NH4)), 
        aes(x = Treatment, y = Soil_NH4, color = Treatment)) +
@@ -864,6 +1265,28 @@ ggplot(data = subset(data2, Species == "LH" & !is.na(Soil_NH4)),
   annotate("text", x = 3, y = 3.60, label = "a", size = 30) +
   scale_color_manual(values = my_colors) +
   scale_x_discrete(labels = c("Control", "Native", "Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "LH" & !is.na(Soil_NH4)), 
+       aes(x = Treatment, y = Soil_NH4, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Soil Ammonium (ppm)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  scale_fill_manual(values = my_colors) +
+  scale_y_continuous(labels = scales::label_number(accuracy = 0.1)) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  coord_cartesian(ylim = c(0,4)) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
@@ -898,6 +1321,31 @@ ggplot(data = subset(data2, Species == "BA"),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "BA"), 
+       aes(x = Treatment, y = PercN, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Leaf Tissue Nitrogen (%)") +
+  xlab("Treatment Strain") +
+  coord_cartesian(ylim = c(0,5)) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 3.3, label = "a", size = 25) +
+  annotate("text", x = 2, y = 4.45, label = "b", size = 25) +
+  annotate("text", x = 3, y = 4.3, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "CN "), 
        aes(x = Treatment, y = PercN, color = Treatment)) +
@@ -921,6 +1369,30 @@ ggplot(data = subset(data2, Species == "CN "),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "CN "), 
+       aes(x = Treatment, y = PercN, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Leaf Tissue Nitrogen (%)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 3.6, label = "a", size = 25) +
+  annotate("text", x = 2, y = 5.5, label = "c", size = 25) +
+  annotate("text", x = 3, y = 4.9, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
 
 ggplot(data = subset(data2, Species == "LH"), 
        aes(x = Treatment, y = PercN, color = Treatment)) +
@@ -944,7 +1416,98 @@ ggplot(data = subset(data2, Species == "LH"),
         axis.text.y = element_text(size = 70),
         legend.position = "none",
         axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = subset(data2, Species == "LH"), 
+       aes(x = Treatment, y = PercN, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Leaf Tissue Nitrogen (%)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 3.4, label = "a", size = 25) +
+  annotate("text", x = 2, y = 3.2, label = "b", size = 25) +
+  annotate("text", x = 3, y = 3.3, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
 
+
+
+# violin #
+ggplot(data = subset(data2, Species == "BA"), 
+       aes(x = Treatment, y = ANPP_BNPP_ratio, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Shoot:Root Ratio") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 3.3, label = "a", size = 25) +
+  annotate("text", x = 2, y = 8.5, label = "b", size = 25) +
+  annotate("text", x = 3, y = 10, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
+ggplot(data = subset(data2, Species == "CN "), 
+       aes(x = Treatment, y = ANPP_BNPP_ratio, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Shoot:Root Ratio") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 1.8, label = "a", size = 25) +
+  annotate("text", x = 2, y = 3.4, label = "b", size = 25) +
+  annotate("text", x = 3, y = 3.4, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+
+ggplot(data = subset(data2, Species == "LH"), 
+       aes(x = Treatment, y = ANPP_BNPP_ratio, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Shoot:Root Ratio") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
 #######################################################
 
 Summary_Table2 <- AvgIndArea %>%
@@ -983,6 +1546,29 @@ ggplot(data = AvgIndArea,
   annotate("text", x = 3, y = 95.00, label = "b", size = 30) +
   scale_color_manual(values = my_colors) +
   scale_x_discrete(labels = c("Control", "Native", "Comemrcial")) +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        text = element_text(size = 65),
+        axis.text.x = element_text(size = 70),
+        axis.text.y = element_text(size = 70),
+        legend.position = "none",
+        axis.ticks.length = unit(0.1, "inch"))
+# violin #
+ggplot(data = AvgIndArea, 
+       aes(x = Treatment, y = AvgEthPPM, fill = Treatment)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +
+  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  ylab("Ethylene Produced (ppm)") +
+  xlab("Treatment Strain") +
+  stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
+  annotate("text", x = 1, y = 15, label = "a", size = 25) +
+  annotate("text", x = 2, y = 160, label = "c", size = 25) +
+  annotate("text", x = 3, y = 95, label = "b", size = 25) +
+  scale_fill_manual(values = my_colors) +
+  scale_x_discrete(labels = c("Control", "Native\u00A0", "\u00A0Commercial")) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
