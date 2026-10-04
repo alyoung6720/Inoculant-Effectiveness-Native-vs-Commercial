@@ -962,6 +962,7 @@ ggplot(data = subset(data2, Species == "BA"),
   xlab("Inoculation Treatment")+
   scale_fill_manual(values = my_colors) +
   scale_x_discrete(labels = c("Control", "Host", expression(italic(Vigna)))) + 
+  scale_y_continuous(breaks = c(0, 3, 6, 9),limits = c(0, 10)) +  
   stat_summary(fun = mean,geom = "point",shape = 23,size = 8,fill = "black",color = "black") +
   annotate("text", x = 1, y = 3.3, label = "a", size = 25) +
   annotate("text", x = 2, y = 8.5, label = "b", size = 25) +
