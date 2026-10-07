@@ -384,40 +384,24 @@ pairs(flower_emm)
 # Define custom colors
 my_colors <- c("Control" = "#704020", "S1" = "#8B8C64", "S3" = "#d17200")
 
-
-# boxplot #
-ggplot(data = Flowers3, 
-       aes(x = Treatment, y = Flower, color = Treatment)) +
-  geom_boxplot(aes(group = Treatment), fill = NA, outlier.shape = NA, size = 6) +  # Boxplot outline only
-  stat_summary(fun = mean, aes(group = Treatment), geom = "crossbar", width = 0.75, # Match the boxplot width
-               color = "black", size = 1) +
-  geom_jitter(width = 0.2, size = 10, alpha = 0.7) + # Raw points
-  ylab("Flower Number") +
-  xlab("Inoculation Treatment")+
-  annotate("text", x = 1, y = 3.75, label = "b", size = 30) +
-  annotate("text", x = 2, y = 2.75, label = "b", size = 30) +
-  scale_color_manual(values = my_colors) +
-  scale_x_discrete(labels = c("Host",expression(italic(Vigna)))) +  
-  theme(panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        axis.line = element_line(colour = "black"),
-        text = element_text(size = 65),
-        axis.text.x = element_text(size = 70),
-        axis.text.y = element_text(size = 70),
-        legend.position = "none",
-        axis.ticks.length = unit(0.1, "inch"))
-
 # violin #
 ggplot(data = Flowers3, 
        aes(x = Treatment, y = Flower, fill = Treatment)) +
-  geom_violin(trim = FALSE, alpha = 0.5) +
-  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
+  geom_violin(trim = TRUE, alpha = 0.5) +
+  geom_jitter(
+    width = 0.15,
+    height = 0,
+    shape = 21,
+    size = 8,
+    stroke = 1,
+    color = "black",
+    alpha = 0.8) +  
   ylab("Flower Number") +
   xlab("Inoculation Treatment")+
   stat_summary(fun = mean, geom = "point", shape = 23, size = 8, fill = "black") + # mean
   scale_fill_manual(values = my_colors) +
-  scale_x_discrete(labels = c("Host",expression(italic(Vigna)))) +  
+  scale_x_discrete(labels = c("Host",expression(italic(Vigna)))) + 
+  scale_y_continuous(breaks = c(1, 2, 3)) +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank(),
@@ -438,8 +422,14 @@ ggplot(data = Flowers3,
 ggplot(data = subset(data2, Species == "BA"), 
        aes(x = Treatment, y = ANPP, fill = Treatment)) +
   geom_violin(trim = FALSE, alpha = 0.5) +
-  geom_jitter(width = 0.15,shape = 21,size = 8,stroke = 1,color = "black",alpha = 0.8) +
-  ylab("Shoot Biomass (g)") +
+  geom_jitter(
+    width = 0.15,
+    height = 0,
+    shape = 21,
+    size = 8,
+    stroke = 1,
+    color = "black",
+    alpha = 0.8) +    ylab("Shoot Biomass (g)") +
   xlab("Inoculation Treatment")+
   stat_summary(fun = mean, geom = "point", shape = 23, size = 8, fill = "black") + # mean
   scale_fill_manual(values = my_colors) +
